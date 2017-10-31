@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Pin a Tune!" width="435" id="O5K-Kj-6dX">
+                                    <barButtonItem title="Pin a Tune" width="435" id="O5K-Kj-6dX">
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="pinButton:" destination="fMT-u1-0ie" id="Orc-qY-DWi"/>
