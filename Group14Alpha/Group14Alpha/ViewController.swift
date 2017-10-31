@@ -16,8 +16,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
-        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-        
+        loginButton.center = view.center
         loginButton.delegate = self
         loginButton.readPermissions = ["email", "public_profile"]
     }
@@ -32,6 +31,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("Segue to MAPVIEW")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+        self.present(vc, animated: true, completion: nil)
+        
         if error != nil {
             print(error)
             return
