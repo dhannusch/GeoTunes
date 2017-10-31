@@ -10,14 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate  {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
     
     @IBOutlet weak var mapView: MKMapView!
-    
     
     var myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
     
     let locManager = CLLocationManager()
+    
+    let annotation = MKPointAnnotation()
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
@@ -36,6 +37,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView.delegate = self
+        
         locManager.delegate = self
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestWhenInUseAuthorization()
@@ -49,25 +52,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func pinButton(_ sender: Any) {
-        let myPin = MKPointAnnotation()
-        myPin.coordinate = self.myLocation
-        myPin.title = "My Pin"
-        myPin.subtitle = "Play this song"
-        mapView.addAnnotation(myPin)
-        var pin:MKAnnotationView = MKAnnotationView()
-        pin.annotation = myPin
-        pin.canShowCallout = true
-        pin.isEnabled = true
+        annotation.coordinate = self.myLocation
+        annotation.title = "Pin"
+        annotation.subtitle = "Play this song"
+        mapView.addAnnotation(annotation)
+        print("Adding Pin!")
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { return nil }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "Pin") as? MKPinAnnotationView
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
+    }
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegueWithIdentifier("", sender: view)
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? SecondViewController, let annotationView = sender as? MKPinAnnotationView {
+            destination.annotation = annotationView.annotation as? MKPointAnnotation
+        }
+    }
+    */
 }
