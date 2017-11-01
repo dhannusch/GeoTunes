@@ -47,6 +47,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("Failed to start graph request:", err!)
                 return
             }
+            result.dictionaryValue
             print(result!)
         }
     }
