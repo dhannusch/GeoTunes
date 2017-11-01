@@ -9,22 +9,47 @@
 import UIKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
+    
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
+        username.delegate = self
+        password.delegate = self
         super.viewDidLoad()
-        
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
         loginButton.center = view.center
         loginButton.delegate = self
         loginButton.readPermissions = ["email", "public_profile"]
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func primaryLoginButton(_ sender: Any) {
+        defaults.set("\(username)", forKey: "username")
+        defaults.set("\(username)", forKey: "password")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did log out of facebook")
@@ -47,7 +72,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("Failed to start graph request:", err!)
                 return
             }
-            result.dictionaryValue
             print(result!)
         }
     }
