@@ -21,6 +21,7 @@
 		8F4EF2191FA8167B006C2B47 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF21E1FA8167B006C2B47 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F4EF21A1FA8167B006C2B47 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF21F1FA8167B006C2B47 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F4EF21B1FA8167B006C2B47 /* Pods_Group14Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF2201FA8167B006C2B47 /* Pods_Group14Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		8F4EF21E1FA8167B006C2B47 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4EF21F1FA8167B006C2B47 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4EF2201FA8167B006C2B47 /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */,
 				8F4EF2171FA8167B006C2B47 /* Bolts.framework in Frameworks */,
 				8F4EF2181FA8167B006C2B47 /* FBSDKCoreKit.framework in Frameworks */,
 				8F4EF2191FA8167B006C2B47 /* FBSDKLoginKit.framework in Frameworks */,
@@ -114,6 +117,7 @@
 		8F28A6B81FA0242D00A6DE1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */,
 				8F4EF21C1FA8167B006C2B47 /* Bolts.framework */,
 				8F4EF21D1FA8167B006C2B47 /* FBSDKCoreKit.framework */,
 				8F4EF21E1FA8167B006C2B47 /* FBSDKLoginKit.framework */,
@@ -221,6 +225,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SpotifyKit/SpotifyKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -228,6 +233,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpotifyKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

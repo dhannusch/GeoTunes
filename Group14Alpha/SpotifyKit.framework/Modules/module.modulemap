@@ -1,0 +1,4 @@
+framework module SpotifyKit {
+    header "SpotifyKit-Swift.h"
+    requires objc
+}

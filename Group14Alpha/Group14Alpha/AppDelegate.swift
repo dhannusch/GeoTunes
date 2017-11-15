@@ -8,6 +8,18 @@
 
 import UIKit
 import FBSDKCoreKit
+import SpotifyKit
+
+// The Spotify developer application object
+// Fill this with the data from the app you've set up on Spotify developer page
+fileprivate let application = SpotifyManager.SpotifyDeveloperApplication(
+    clientId:     "3aaa2372c22e45a18901c0cfc5ee44e8",
+    clientSecret: "7dd7467b2b454e42a438dec524e3f465",
+    redirectUri:  "group14alpha://callback"
+)
+
+// The SpotifyKit helper object that will allow you to perform the queries
+let spotifyManager = SpotifyManager(with: application)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
