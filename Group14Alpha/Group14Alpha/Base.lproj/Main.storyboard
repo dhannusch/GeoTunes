@@ -97,6 +97,34 @@
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="33.733133433283363"/>
         </scene>
+        <!--Spotify View Controller-->
+        <scene sceneID="kXK-6T-aYk">
+            <objects>
+                <viewController storyboardIdentifier="spotify" id="CrC-zT-VOj" customClass="SpotifyViewController" customModule="Group14Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jm2-JE-xVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOl-f4-cnz">
+                                <rect key="frame" x="90" y="318" width="195" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.72549019609999998" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login to Spotify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="spotifyLoginButton:" destination="CrC-zT-VOj" eventType="touchUpInside" id="jtH-Dv-995"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="lRM-Wx-2vn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLm-pq-iJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.60000000000002" y="33.733133433283363"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="NtM-aP-zEp">
             <objects>
@@ -136,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KN4-p4-x2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1330" y="34"/>
+            <point key="canvasLocation" x="1486" y="34"/>
         </scene>
     </scenes>
     <resources>

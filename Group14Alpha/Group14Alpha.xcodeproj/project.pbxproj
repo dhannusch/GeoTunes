@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0B0B491FC2257800BE8A00 /* Group14Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B471FC2257800BE8A00 /* Group14Alpha.xcdatamodeld */; };
 		8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */; };
 		8F28A6A81FA021B600A6DE1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A6A71FA021B600A6DE1F /* ViewController.swift */; };
 		8F28A6AB1FA021B600A6DE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F28A6A91FA021B600A6DE1F /* Main.storyboard */; };
@@ -22,6 +23,11 @@
 		8F4EF21A1FA8167B006C2B47 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF21F1FA8167B006C2B47 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F4EF21B1FA8167B006C2B47 /* Pods_Group14Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF2201FA8167B006C2B47 /* Pods_Group14Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */; };
+		8FBFCA7F1FBBDE96006CBBC5 /* SpotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */; };
+		8FBFCA8A1FBBE333006CBBC5 /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFCA891FBBE333006CBBC5 /* BridgeViewController.m */; };
+		8FFBFB771FBBE35400CB80C3 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFBFB741FBBE35300CB80C3 /* SpotifyMetadata.framework */; };
+		8FFBFB781FBBE35400CB80C3 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFBFB751FBBE35300CB80C3 /* SpotifyAudioPlayback.framework */; };
+		8FFBFB791FBBE35400CB80C3 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFBFB761FBBE35300CB80C3 /* SpotifyAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,7 @@
 		16DDF6471FA6D27F000EB80D /* Group14Alpha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Group14Alpha.entitlements; sourceTree = "<group>"; };
 		673549A023F5614C0A8157EB /* Pods-Group14Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		7AF569983AEAED8629CE40EB /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0B0B481FC2257800BE8A00 /* Group14Alpha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group14Alpha.xcdatamodel; sourceTree = "<group>"; };
 		8F28A6A21FA021B600A6DE1F /* Group14Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group14Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F28A6A71FA021B600A6DE1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -50,6 +57,14 @@
 		8F4EF21F1FA8167B006C2B47 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4EF2201FA8167B006C2B47 /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyViewController.swift; sourceTree = "<group>"; };
+		8FBFCA801FBBE225006CBBC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8FBFCA871FBBE333006CBBC5 /* Group14Alpha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Group14Alpha-Bridging-Header.h"; sourceTree = "<group>"; };
+		8FBFCA881FBBE333006CBBC5 /* BridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeViewController.h; sourceTree = "<group>"; };
+		8FBFCA891FBBE333006CBBC5 /* BridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeViewController.m; sourceTree = "<group>"; };
+		8FFBFB741FBBE35300CB80C3 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
+		8FFBFB751FBBE35300CB80C3 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		8FFBFB761FBBE35300CB80C3 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyAuthentication.framework; path = "../../../../../../../../Downloads/ios-sdk-master/SpotifyAuthentication.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFBFB771FBBE35400CB80C3 /* SpotifyMetadata.framework in Frameworks */,
+				8FFBFB791FBBE35400CB80C3 /* SpotifyAuthentication.framework in Frameworks */,
 				8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */,
 				8F4EF2171FA8167B006C2B47 /* Bolts.framework in Frameworks */,
 				8F4EF2181FA8167B006C2B47 /* FBSDKCoreKit.framework in Frameworks */,
@@ -65,6 +82,7 @@
 				8F4EF21B1FA8167B006C2B47 /* Pods_Group14Alpha.framework in Frameworks */,
 				8F4EF20E1FA813EB006C2B47 /* CoreLocation.framework in Frameworks */,
 				8F28A6BA1FA0242D00A6DE1F /* FacebookSDKs-iOS-4.27.1 in Frameworks */,
+				8FFBFB781FBBE35400CB80C3 /* SpotifyAudioPlayback.framework in Frameworks */,
 				8F4EF20C1FA813AD006C2B47 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +102,7 @@
 		8F28A6991FA021B600A6DE1F = {
 			isa = PBXGroup;
 			children = (
+				8F0B0B471FC2257800BE8A00 /* Group14Alpha.xcdatamodeld */,
 				8F28A6A41FA021B600A6DE1F /* Group14Alpha */,
 				8F28A6A31FA021B600A6DE1F /* Products */,
 				8F28A6B81FA0242D00A6DE1F /* Frameworks */,
@@ -102,14 +121,21 @@
 		8F28A6A41FA021B600A6DE1F /* Group14Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				8FFBFB751FBBE35300CB80C3 /* SpotifyAudioPlayback.framework */,
+				8FFBFB761FBBE35300CB80C3 /* SpotifyAuthentication.framework */,
+				8FFBFB741FBBE35300CB80C3 /* SpotifyMetadata.framework */,
 				16DDF6471FA6D27F000EB80D /* Group14Alpha.entitlements */,
 				8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */,
 				8F28A6A71FA021B600A6DE1F /* ViewController.swift */,
 				8F4EF2091FA80B19006C2B47 /* MapViewController.swift */,
+				8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */,
 				8F28A6A91FA021B600A6DE1F /* Main.storyboard */,
 				8F28A6AC1FA021B600A6DE1F /* Assets.xcassets */,
 				8F28A6AE1FA021B600A6DE1F /* LaunchScreen.storyboard */,
 				8F28A6B11FA021B600A6DE1F /* Info.plist */,
+				8FBFCA881FBBE333006CBBC5 /* BridgeViewController.h */,
+				8FBFCA891FBBE333006CBBC5 /* BridgeViewController.m */,
+				8FBFCA871FBBE333006CBBC5 /* Group14Alpha-Bridging-Header.h */,
 			);
 			path = Group14Alpha;
 			sourceTree = "<group>";
@@ -117,6 +143,7 @@
 		8F28A6B81FA0242D00A6DE1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FBFCA801FBBE225006CBBC5 /* AVFoundation.framework */,
 				8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */,
 				8F4EF21C1FA8167B006C2B47 /* Bolts.framework */,
 				8F4EF21D1FA8167B006C2B47 /* FBSDKCoreKit.framework */,
@@ -170,6 +197,7 @@
 				TargetAttributes = {
 					8F28A6A11FA021B600A6DE1F = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -283,6 +311,9 @@
 				8F28A6A81FA021B600A6DE1F /* ViewController.swift in Sources */,
 				8F4EF20A1FA80B19006C2B47 /* MapViewController.swift in Sources */,
 				8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */,
+				8FBFCA8A1FBBE333006CBBC5 /* BridgeViewController.m in Sources */,
+				8FBFCA7F1FBBDE96006CBBC5 /* SpotifyViewController.swift in Sources */,
+				8F0B0B491FC2257800BE8A00 /* Group14Alpha.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,12 +451,34 @@
 			baseConfigurationReference = 673549A023F5614C0A8157EB /* Pods-Group14Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J93PRX6T2S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Group14Alpha",
+				);
 				INFOPLIST_FILE = Group14Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"SpotifyKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.group14.Group14Alpha1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -436,12 +489,19 @@
 			baseConfigurationReference = 0394908F834F419DBE393EC2 /* Pods-Group14Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J93PRX6T2S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Group14Alpha",
+				);
 				INFOPLIST_FILE = Group14Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.group14.Group14Alpha1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -469,6 +529,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8F0B0B471FC2257800BE8A00 /* Group14Alpha.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8F0B0B481FC2257800BE8A00 /* Group14Alpha.xcdatamodel */,
+			);
+			currentVersion = 8F0B0B481FC2257800BE8A00 /* Group14Alpha.xcdatamodel */;
+			path = Group14Alpha.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F28A69A1FA021B600A6DE1F /* Project object */;
 }

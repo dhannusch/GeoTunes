@@ -33,6 +33,17 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb276682546185218</string>
+				<string>group14alpha</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.group14.GeoTunes</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>group14alpha</string>
 			</array>
 		</dict>
 	</array>
