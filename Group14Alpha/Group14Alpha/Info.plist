@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>GeoTunes</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -55,6 +57,7 @@
 	<string>GeoTunes</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>spotify-action</string>
 		<string>fbapi</string>
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
