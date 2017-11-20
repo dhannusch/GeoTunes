@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F0B0B491FC2257800BE8A00 /* Group14Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B471FC2257800BE8A00 /* Group14Alpha.xcdatamodeld */; };
+		8F0B0B4B1FC254D000BE8A00 /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */; };
 		8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */; };
 		8F28A6A81FA021B600A6DE1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A6A71FA021B600A6DE1F /* ViewController.swift */; };
 		8F28A6AB1FA021B600A6DE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F28A6A91FA021B600A6DE1F /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		673549A023F5614C0A8157EB /* Pods-Group14Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		7AF569983AEAED8629CE40EB /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0B0B481FC2257800BE8A00 /* Group14Alpha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group14Alpha.xcdatamodel; sourceTree = "<group>"; };
+		8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
 		8F28A6A21FA021B600A6DE1F /* Group14Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group14Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F28A6A71FA021B600A6DE1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -129,6 +131,7 @@
 				8F28A6A71FA021B600A6DE1F /* ViewController.swift */,
 				8F4EF2091FA80B19006C2B47 /* MapViewController.swift */,
 				8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */,
+				8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */,
 				8F28A6A91FA021B600A6DE1F /* Main.storyboard */,
 				8F28A6AC1FA021B600A6DE1F /* Assets.xcassets */,
 				8F28A6AE1FA021B600A6DE1F /* LaunchScreen.storyboard */,
@@ -310,6 +313,7 @@
 			files = (
 				8F28A6A81FA021B600A6DE1F /* ViewController.swift in Sources */,
 				8F4EF20A1FA80B19006C2B47 /* MapViewController.swift in Sources */,
+				8F0B0B4B1FC254D000BE8A00 /* PinViewController.swift in Sources */,
 				8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */,
 				8FBFCA8A1FBBE333006CBBC5 /* BridgeViewController.m in Sources */,
 				8FBFCA7F1FBBDE96006CBBC5 /* SpotifyViewController.swift in Sources */,

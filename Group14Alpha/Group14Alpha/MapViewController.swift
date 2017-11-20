@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
     
@@ -51,11 +52,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     @IBAction func pinButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "pinView")
+        self.present(vc, animated: true, completion: nil)
+       /*
         annotation.coordinate = self.myLocation
         annotation.title = "Pin"
         annotation.subtitle = "Play this song"
         mapView.addAnnotation(annotation)
         print("Adding Pin!")
+        */
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

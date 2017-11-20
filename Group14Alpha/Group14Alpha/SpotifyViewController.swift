@@ -71,6 +71,9 @@ class SpotifyViewController: UIViewController {
             if auth.canHandle(auth.redirectURL) {
                 // To do - build in error handling
                 UIApplication.shared.open(loginUrl!, options: [:], completionHandler: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+                self.present(vc, animated: true, completion: nil)
             }
         }
     }

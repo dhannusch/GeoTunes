@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import CoreData
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
     
