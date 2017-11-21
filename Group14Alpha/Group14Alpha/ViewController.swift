@@ -16,14 +16,36 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
+        username.borderStyle = UITextBorderStyle.roundedRect
+        password.borderStyle = UITextBorderStyle.roundedRect
+
         username.delegate = self
         password.delegate = self
+        
         super.viewDidLoad()
-        let loginButton = FBSDKLoginButton()
-        view.addSubview(loginButton)
-        loginButton.center = view.center
-        loginButton.delegate = self
-        loginButton.readPermissions = ["email", "public_profile"]
+        
+        // Custom FB Login Button
+        let customFBButton = UIButton(type: .system)
+        customFBButton.backgroundColor = .blue
+        customFBButton.frame = CGRect(x: 56, y: 480, width: 263 , height: 50)
+        customFBButton.setTitle("Log In With Facebook", for: .normal)
+        customFBButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        customFBButton.setTitleColor(.white, for: .normal)
+        customFBButton.layer.cornerRadius = 6
+        view.addSubview(customFBButton)
+        
+        customFBButton.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
+    
+    }
+    
+    @objc func handleCustomFBLogin() {
+        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
+            if err != nil {
+                print("Custom FB Login failed:", err)
+                return
+            }
+            self.showEmailAddress()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -65,9 +87,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
             print(error)
             return
         }
+        showEmailAddress()
+    }
 
+    func showEmailAddress() {
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
-            
             if err != nil {
                 print("Failed to start graph request:", err!)
                 return
@@ -75,6 +99,5 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
             print(result!)
         }
     }
-
 }
 
