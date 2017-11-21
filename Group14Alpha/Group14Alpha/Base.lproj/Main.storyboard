@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -119,6 +119,38 @@
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="33.733133433283363"/>
         </scene>
+        <!--Spotify View Controller-->
+        <scene sceneID="kXK-6T-aYk">
+            <objects>
+                <viewController storyboardIdentifier="spotify" id="CrC-zT-VOj" customClass="SpotifyViewController" customModule="Group14Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jm2-JE-xVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOl-f4-cnz">
+                                <rect key="frame" x="90" y="318" width="195" height="30"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.72549019609999998" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login to Spotify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="spotifyLoginButton:" destination="CrC-zT-VOj" eventType="touchUpInside" id="jtH-Dv-995"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DOl-f4-cnz" firstAttribute="centerX" secondItem="jm2-JE-xVC" secondAttribute="centerX" id="EVa-3M-dQU"/>
+                            <constraint firstItem="DOl-f4-cnz" firstAttribute="centerY" secondItem="jm2-JE-xVC" secondAttribute="centerY" id="PWP-H0-Rfz"/>
+                            <constraint firstItem="DOl-f4-cnz" firstAttribute="leading" secondItem="lRM-Wx-2vn" secondAttribute="leading" constant="90" id="WAe-nn-rTh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lRM-Wx-2vn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLm-pq-iJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.60000000000002" y="33.733133433283363"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="NtM-aP-zEp">
             <objects>
@@ -158,7 +190,100 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KN4-p4-x2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.60000000000002" y="33.733133433283363"/>
+            <point key="canvasLocation" x="1486" y="34"/>
+        </scene>
+        <!--Pin View Controller-->
+        <scene sceneID="5cZ-za-tJ2">
+            <objects>
+                <viewController storyboardIdentifier="pinView" id="ufB-wn-GoC" customClass="PinViewController" customModule="Group14Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bMx-cH-swS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOa-s8-dXi">
+                                <rect key="frame" x="166" y="125" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEP-Ia-cbb">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Pin It!"/>
+                                <connections>
+                                    <action selector="pinItButton:" destination="ufB-wn-GoC" eventType="touchUpInside" id="Z04-qC-Vec"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Pin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuv-yx-fP8">
+                                <rect key="frame" x="16" y="51" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin Color:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHU-Ry-vuG">
+                                <rect key="frame" x="16" y="483" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin Message:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8V-3o-tIS">
+                                <rect key="frame" x="16" y="380" width="109" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="4TM-0V-8RA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-k9-tf2">
+                                <rect key="frame" x="133" y="380" width="226" height="75"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icF-P9-uxr">
+                                <rect key="frame" x="133" y="483" width="226" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="Uyu-Si-ao2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ufB-wn-GoC" id="nkL-AP-pVJ"/>
+                                    <outlet property="delegate" destination="ufB-wn-GoC" id="UN8-2n-2Ge"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xuv-yx-fP8" firstAttribute="trailing" secondItem="bMx-cH-swS" secondAttribute="trailingMargin" id="4S6-RM-63E"/>
+                            <constraint firstItem="aOa-s8-dXi" firstAttribute="top" secondItem="xuv-yx-fP8" secondAttribute="bottom" constant="53" id="4lY-kS-y3j"/>
+                            <constraint firstItem="yHU-Ry-vuG" firstAttribute="top" secondItem="icF-P9-uxr" secondAttribute="top" id="CVp-BX-FXg"/>
+                            <constraint firstItem="yHU-Ry-vuG" firstAttribute="leading" secondItem="IEP-Ia-cbb" secondAttribute="leading" id="CiL-g7-lNa"/>
+                            <constraint firstItem="JJo-k9-tf2" firstAttribute="trailing" secondItem="icF-P9-uxr" secondAttribute="trailing" id="F0F-Hz-cWX"/>
+                            <constraint firstItem="icF-P9-uxr" firstAttribute="leading" secondItem="yHU-Ry-vuG" secondAttribute="trailing" constant="8" symbolic="YES" id="IKz-06-ujP"/>
+                            <constraint firstItem="xuv-yx-fP8" firstAttribute="leading" secondItem="e8V-3o-tIS" secondAttribute="leading" id="MVO-0h-gCT"/>
+                            <constraint firstItem="JJo-k9-tf2" firstAttribute="leading" secondItem="e8V-3o-tIS" secondAttribute="trailing" constant="8" symbolic="YES" id="OBU-xg-QGP"/>
+                            <constraint firstAttribute="bottom" secondItem="IEP-Ia-cbb" secondAttribute="bottom" constant="20" symbolic="YES" id="OZH-eY-crd"/>
+                            <constraint firstItem="yHU-Ry-vuG" firstAttribute="top" secondItem="e8V-3o-tIS" secondAttribute="bottom" constant="82" id="QTA-Rg-t4p"/>
+                            <constraint firstItem="icF-P9-uxr" firstAttribute="trailing" secondItem="IEP-Ia-cbb" secondAttribute="trailing" id="TfT-CD-V1S"/>
+                            <constraint firstItem="xuv-yx-fP8" firstAttribute="top" secondItem="04K-Cx-gQU" secondAttribute="top" constant="31" id="TxU-MK-RtK"/>
+                            <constraint firstItem="e8V-3o-tIS" firstAttribute="leading" secondItem="yHU-Ry-vuG" secondAttribute="leading" id="fm0-D2-tM0"/>
+                            <constraint firstItem="icF-P9-uxr" firstAttribute="top" secondItem="JJo-k9-tf2" secondAttribute="bottom" constant="28" id="hh3-1G-s8H"/>
+                            <constraint firstItem="e8V-3o-tIS" firstAttribute="top" secondItem="JJo-k9-tf2" secondAttribute="top" id="hh3-ga-zzU"/>
+                            <constraint firstItem="xuv-yx-fP8" firstAttribute="trailing" secondItem="JJo-k9-tf2" secondAttribute="trailing" id="iJx-uS-J3K"/>
+                            <constraint firstItem="xuv-yx-fP8" firstAttribute="leading" secondItem="bMx-cH-swS" secondAttribute="leadingMargin" id="o3p-uh-dw6"/>
+                            <constraint firstItem="xuv-yx-fP8" firstAttribute="centerX" secondItem="aOa-s8-dXi" secondAttribute="centerX" id="oTe-cg-xVn"/>
+                            <constraint firstItem="IEP-Ia-cbb" firstAttribute="top" secondItem="icF-P9-uxr" secondAttribute="bottom" constant="55" id="xsn-bb-ooQ"/>
+                            <constraint firstItem="JJo-k9-tf2" firstAttribute="leading" secondItem="icF-P9-uxr" secondAttribute="leading" id="zhW-Ed-CWp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="04K-Cx-gQU"/>
+                    </view>
+                    <connections>
+                        <outlet property="pinColorPicker" destination="icF-P9-uxr" id="k7n-fA-vrk"/>
+                        <outlet property="pinMessage" destination="JJo-k9-tf2" id="XZT-Ez-AVP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsO-86-SN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2284" y="33.733133433283363"/>
         </scene>
     </scenes>
     <resources>

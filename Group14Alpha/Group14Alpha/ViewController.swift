@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import CoreData
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
     
@@ -68,7 +69,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         defaults.set("\(username)", forKey: "username")
         defaults.set("\(username)", forKey: "password")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "spotify")
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -80,7 +81,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         print("Segue to MAPVIEW")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "spotify")
         self.present(vc, animated: true, completion: nil)
         
         if error != nil {
