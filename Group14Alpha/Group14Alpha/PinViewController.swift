@@ -9,9 +9,34 @@
 import UIKit
 import CoreData
 import Alamofire
+import AVFoundation
 
-class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+var player = AVAudioPlayer()
 
+struct post {
+    let mainImage : UIImage!
+    let name : String!
+    let previewURL : String!
+}
+
+class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
+    
+    @IBOutlet weak var spotSearchBar: UISearchBar!
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let keywords = searchBar.text
+        let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
+        
+        searchURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track"
+        
+        print(searchURL)
+        
+        callAlamo(url: searchURL)
+        self.view.endEditing(true)
+    }
+
+    
     var auth = SPTAuth.defaultInstance()!
     var session:SPTSession!
     var player: SPTAudioStreamingController?
@@ -19,9 +44,9 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     var userDefaults: UserDefaults!
     
     @IBOutlet weak var spotTableView: UITableView!
-    var searchURL = "https://api.spotify.com/v1/search?q=Kendrick+Lamar&type=track"
+    var searchURL = String()
     typealias JSONStandard = [String : AnyObject]
-    var names = [String]()
+    var posts = [post]()
     
     @IBOutlet weak var pinColorPicker: UIPickerView!
     var colorData: [String] = [String]()
@@ -42,10 +67,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     func callAlamo(url: String){
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
-            
             self.parseData(JSONData: response.data!)
-            
-            
         })
     }
     
@@ -58,9 +80,20 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
                         let item = items[i]
                         
                         let name = item["name"] as! String
-                        names.append(name)
-                        
-                        self.spotTableView.reloadData()
+                        // 30 second preview of song
+                        let previewURL = item["preview_url"] as! String
+                        if let album = item["album"] as? JSONStandard{
+                            if let images = album["images"] as? [JSONStandard]{
+                                let imageData = images[0]
+                                let mainImageURL = URL(string: imageData["url"] as! String)
+                                let mainImageData = NSData(contentsOf: mainImageURL!)
+                                
+                                let mainImage = UIImage(data: mainImageData as! Data)
+                                
+                                posts.append(post.init(mainImage: mainImage, name: name, previewURL: previewURL))
+                                self.spotTableView.reloadData()
+                            }
+                        }
                     }
                 }
             }
@@ -72,14 +105,20 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        cell?.textLabel?.text = names[indexPath.row]
         
+        let mainImageView = cell?.viewWithTag(2) as! UIImageView
+        
+        mainImageView.image = posts[indexPath.row].mainImage
+        
+        let mainLabel = cell?.viewWithTag(1) as! UILabel
+        
+        mainLabel.text = posts[indexPath.row].name
         return cell!
     }
     
@@ -134,8 +173,14 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let indexPath = self.spotTableView.indexPathForSelectedRow?.row
+        
+        let vc = segue.destination as! AudioPlayerViewController
+        
+        vc.image = posts[indexPath!].mainImage
+        vc.mainSongTitle = posts[indexPath!].name
+        vc.mainPreviewURL = posts[indexPath!].previewURL
+        
     }
     
 
