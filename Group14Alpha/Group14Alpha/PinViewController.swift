@@ -8,14 +8,20 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
-class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
 
     var auth = SPTAuth.defaultInstance()!
     var session:SPTSession!
     var player: SPTAudioStreamingController?
     var loginUrl: URL?
     var userDefaults: UserDefaults!
+    
+    @IBOutlet weak var spotTableView: UITableView!
+    var searchURL = "https://api.spotify.com/v1/search?q=Kendrick+Lamar&type=track"
+    typealias JSONStandard = [String : AnyObject]
+    var names = [String]()
     
     @IBOutlet weak var pinColorPicker: UIPickerView!
     var colorData: [String] = [String]()
@@ -27,9 +33,57 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         pinColorPicker.delegate = self
         pinColorPicker.dataSource = self
         self.colorData = ["Red","Green","Blue","Pink","Yellow","Orange","Purple","Black","White"]
+        
+        callAlamo(url: searchURL)
 
         // Do any additional setup after loading the view.
     }
+    
+    func callAlamo(url: String){
+        Alamofire.request(url).responseJSON(completionHandler: {
+            response in
+            
+            self.parseData(JSONData: response.data!)
+            
+            
+        })
+    }
+    
+    func parseData(JSONData: Data){
+        do {
+            var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
+            if let tracks = readableJSON["tracks"] as? JSONStandard{
+                if let items = tracks ["items"] as? [JSONStandard] {
+                    for i in 0..<items.count{
+                        let item = items[i]
+                        
+                        let name = item["name"] as! String
+                        names.append(name)
+                        
+                        self.spotTableView.reloadData()
+                    }
+                }
+            }
+        }
+        catch{
+            print(error)
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        
+        cell?.textLabel?.text = names[indexPath.row]
+        
+        return cell!
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0717101FC4A3DF00324751 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0717111FC4A3DF00324751 /* Alamofire.framework */; };
 		8F0B0B491FC2257800BE8A00 /* Group14Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B471FC2257800BE8A00 /* Group14Alpha.xcdatamodeld */; };
 		8F0B0B4B1FC254D000BE8A00 /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */; };
 		8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		16DDF6471FA6D27F000EB80D /* Group14Alpha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Group14Alpha.entitlements; sourceTree = "<group>"; };
 		673549A023F5614C0A8157EB /* Pods-Group14Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		7AF569983AEAED8629CE40EB /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0717111FC4A3DF00324751 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0B0B481FC2257800BE8A00 /* Group14Alpha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group14Alpha.xcdatamodel; sourceTree = "<group>"; };
 		8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
 		8F28A6A21FA021B600A6DE1F /* Group14Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group14Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0717101FC4A3DF00324751 /* Alamofire.framework in Frameworks */,
 				8FFBFB771FBBE35400CB80C3 /* SpotifyMetadata.framework in Frameworks */,
 				8FFBFB791FBBE35400CB80C3 /* SpotifyAuthentication.framework in Frameworks */,
 				8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		8F28A6B81FA0242D00A6DE1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F0717111FC4A3DF00324751 /* Alamofire.framework */,
 				8FBFCA801FBBE225006CBBC5 /* AVFoundation.framework */,
 				8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */,
 				8F4EF21C1FA8167B006C2B47 /* Bolts.framework */,
@@ -252,6 +256,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -260,6 +265,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",

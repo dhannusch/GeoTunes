@@ -250,6 +250,26 @@
                                     <outlet property="delegate" destination="ufB-wn-GoC" id="UN8-2n-2Ge"/>
                                 </connections>
                             </pickerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d8b-I9-ZkY">
+                                <rect key="frame" x="16" y="154" width="343" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aPp-Gu-Agu">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPp-Gu-Agu" id="m5R-Vn-nBa">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ufB-wn-GoC" id="jAv-aI-MH8"/>
+                                    <outlet property="delegate" destination="ufB-wn-GoC" id="Y1S-rU-Yrw"/>
+                                    <outlet property="prefetchDataSource" destination="ufB-wn-GoC" id="K5J-Xe-Zvo"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -279,6 +299,7 @@
                     <connections>
                         <outlet property="pinColorPicker" destination="icF-P9-uxr" id="k7n-fA-vrk"/>
                         <outlet property="pinMessage" destination="JJo-k9-tf2" id="XZT-Ez-AVP"/>
+                        <outlet property="spotTableView" destination="d8b-I9-ZkY" id="8wo-u1-s9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsO-86-SN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
