@@ -53,20 +53,20 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     var colorData: [String] = [String]()
     @IBOutlet weak var pinMessage: UITextView!
     
-    var newPin = NSManagedObject()
+    //var newPin = NSManagedObject()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         self.newPin = NSEntityDescription.insertNewObject(forEntityName: "Pin", into: context)
-
+        */
         
         pinMessage.delegate = self
         pinColorPicker.delegate = self
         pinColorPicker.dataSource = self
-        self.colorData = ["Red","Green","Blue","Pink","Yellow","Orange","Purple","Black","White"]
+        self.colorData = ["Red","Green","Blue","Yellow","Orange","Purple","Black","White"]
         pinMessage.delegate = self
         callAlamo(url: searchURL)
 
@@ -137,7 +137,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     var songSelectionURL = String()
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        songSelectionURL = posts[indexPath.row].href
+        songSelectionURL = posts[indexPath.row].name
     }
     
     
@@ -176,12 +176,16 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     }
     
     @IBAction func pinItButton(_ sender: Any) {
+        /*
         self.newPin.setValue(self.songSelectionURL, forKey: "song")
         self.newPin.setValue(self.message, forKey: "pinMessage")
         self.newPin.setValue(self.pinColor, forKey: "pinColor")
+         */
+        /*
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
         self.present(vc, animated: true, completion: nil)
+         */
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -201,8 +205,9 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
         let indexPath = self.spotTableView.indexPathForSelectedRow?.row
         
         let vc = segue.destination as! AudioPlayerViewController
@@ -210,9 +215,28 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         vc.image = posts[indexPath!].mainImage
         vc.mainSongTitle = posts[indexPath!].name
         //vc.mainPreviewURL = posts[indexPath!].previewURL
+ */
+        let indexPath = self.spotTableView.indexPathForSelectedRow?.row
+        
+        let vc = segue.destination as! MapViewController
+        
+        //vc.savePin(posts[indexPath!].name, pinMessage: self.pinMessage.text, pinColor: self.pinColor)
+        vc.pinMessage = self.pinMessage.text
+        vc.pinColor = self.pinColor
+        //vc.song = self.songSelectionURL
+        vc.song = posts[indexPath!].name
+        /*
+        vc.annotation.coordinate = vc.self.myLocation
+        vc.annotation.title = vc.self.song
+        vc.annotation.subtitle = vc.self.pinMessage
+        vc.mapView.addAnnotation(vc.annotation)
+        print("Adding Pin!")
+ */
+        //print(vc.annotation)
+        //print(vc.mapView)
         
     }
-    */
+    
     
 
 }
