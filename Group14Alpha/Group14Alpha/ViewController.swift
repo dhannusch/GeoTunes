@@ -96,14 +96,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-<<<<<<< HEAD
         print("Segue to MAPVIEW")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
         self.present(vc, animated: true, completion: nil)
-        
-=======
->>>>>>> update UI and fixed custom FB button
         if error != nil {
             print(error)
             return
