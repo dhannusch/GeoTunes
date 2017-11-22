@@ -14,6 +14,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         super.viewDidLoad()
         
         // Custom FB Login Button
+        /*
         let customFBButton = UIButton(type: .system)
         customFBButton.backgroundColor = .blue
         customFBButton.frame = CGRect(x: 56, y: 480, width: 263 , height: 50)
@@ -36,9 +38,23 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         view.addSubview(customFBButton)
         
         customFBButton.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
-    
+        */
     }
     
+    @IBAction func customFBButton(_ sender: UIButton) {
+        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
+            if err != nil {
+                print("Custom FB Login failed:", err)
+                return
+            }
+            self.showEmailAddress()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    /*
     @objc func handleCustomFBLogin() {
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
             if err != nil {
@@ -48,6 +64,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
             self.showEmailAddress()
         }
     }
+    */
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 'First Responder' is the same as 'input focus'.
@@ -79,16 +96,18 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+<<<<<<< HEAD
         print("Segue to MAPVIEW")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
         self.present(vc, animated: true, completion: nil)
         
+=======
+>>>>>>> update UI and fixed custom FB button
         if error != nil {
             print(error)
             return
         }
-        showEmailAddress()
     }
 
     func showEmailAddress() {
