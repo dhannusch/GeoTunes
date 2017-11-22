@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F0717101FC4A3DF00324751 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0717111FC4A3DF00324751 /* Alamofire.framework */; };
 		8F0717131FC4B8E200324751 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */; };
+		8F0717151FC4C49A00324751 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0717141FC4C49900324751 /* LoginManager.swift */; };
+		8F0717171FC4C51B00324751 /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0717161FC4C51A00324751 /* MediaPlayer.swift */; };
 		8F0B0B491FC2257800BE8A00 /* Group14Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B471FC2257800BE8A00 /* Group14Alpha.xcdatamodeld */; };
 		8F0B0B4B1FC254D000BE8A00 /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */; };
 		8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 		7AF569983AEAED8629CE40EB /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0717111FC4A3DF00324751 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		8F0717141FC4C49900324751 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		8F0717161FC4C51A00324751 /* MediaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		8F0B0B481FC2257800BE8A00 /* Group14Alpha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group14Alpha.xcdatamodel; sourceTree = "<group>"; };
 		8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
 		8F28A6A21FA021B600A6DE1F /* Group14Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group14Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,8 @@
 				8F28A6A71FA021B600A6DE1F /* ViewController.swift */,
 				8F4EF2091FA80B19006C2B47 /* MapViewController.swift */,
 				8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */,
+				8F0717141FC4C49900324751 /* LoginManager.swift */,
+				8F0717161FC4C51A00324751 /* MediaPlayer.swift */,
 				8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */,
 				8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */,
 				8F28A6A91FA021B600A6DE1F /* Main.storyboard */,
@@ -325,9 +331,11 @@
 				8F4EF20A1FA80B19006C2B47 /* MapViewController.swift in Sources */,
 				8F0B0B4B1FC254D000BE8A00 /* PinViewController.swift in Sources */,
 				8F28A6A61FA021B600A6DE1F /* AppDelegate.swift in Sources */,
+				8F0717151FC4C49A00324751 /* LoginManager.swift in Sources */,
 				8FBFCA8A1FBBE333006CBBC5 /* BridgeViewController.m in Sources */,
 				8FBFCA7F1FBBDE96006CBBC5 /* SpotifyViewController.swift in Sources */,
 				8F0B0B491FC2257800BE8A00 /* Group14Alpha.xcdatamodeld in Sources */,
+				8F0717171FC4C51B00324751 /* MediaPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,16 +11,9 @@ import FBSDKCoreKit
 import SpotifyKit
 import CoreData
 
-// The Spotify developer application object
-// Fill this with the data from the app you've set up on Spotify developer page
-fileprivate let application = SpotifyManager.SpotifyDeveloperApplication(
-    clientId:     "3aaa2372c22e45a18901c0cfc5ee44e8",
-    clientSecret: "7dd7467b2b454e42a438dec524e3f465",
-    redirectUri:  "group14alpha://callback"
-)
 
 // The SpotifyKit helper object that will allow you to perform the queries
-let spotifyManager = SpotifyManager(with: application)
+//let spotifyManager = SpotifyManager(with: application)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,22 +23,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
      Catches URLs with specific prefix ("your_spotify_redirect_uri://")
      */
+    /*
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        spotifyManager.saveToken(from: url)
+        SpotifyManager.saveToken(from: url)
         
         return true
     }
-    
+    */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        auth.redirectURL = URL(string: "group14alpha://callback")
-        auth.sessionUserDefaultsKey = "current session"
-            
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        if !LoginManager.shared.isLogged {
+            self.window?.rootViewController = SpotifyViewController()
+            self.window?.makeKeyAndVisible()
+        } else {
+            LoginManager.shared.preparePlayer()
+        }
         
         return true
     }
-    
+    /*
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return LoginManager.shared.handled(url: url)
+    }
+    */
     // 1
+    /*
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         // 2- check if app can handle redirect URL
         if auth.canHandle(auth.redirectURL) {
@@ -67,12 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return false
     }
-    
+    */
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         
-        return handled
+        return LoginManager.shared.handled(url: url); return handled
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

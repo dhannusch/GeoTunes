@@ -16,7 +16,7 @@ var player = AVAudioPlayer()
 struct post {
     let mainImage : UIImage!
     let name : String!
-    let previewURL : String!
+    //let previewURL : String!
 }
 
 class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -38,7 +38,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
 
     
     var auth = SPTAuth.defaultInstance()!
-    var session:SPTSession!
+    //var session:SPTSession!
     var player: SPTAudioStreamingController?
     var loginUrl: URL?
     var userDefaults: UserDefaults!
@@ -65,10 +65,11 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     }
     
     func callAlamo(url: String){
-        Alamofire.request(url).responseJSON(completionHandler: {
+        Alamofire.request(searchURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: ["Authorization": "Bearer "+auth.session.accessToken]).responseJSON {
             response in
+            print(response);
             self.parseData(JSONData: response.data!)
-        })
+        }
     }
     
     func parseData(JSONData: Data){
@@ -81,7 +82,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
                         
                         let name = item["name"] as! String
                         // 30 second preview of song
-                        let previewURL = item["preview_url"] as! String
+                        //let previewURL = item["preview_url"] as! String
                         if let album = item["album"] as? JSONStandard{
                             if let images = album["images"] as? [JSONStandard]{
                                 let imageData = images[0]
@@ -90,7 +91,8 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
                                 
                                 let mainImage = UIImage(data: mainImageData as! Data)
                                 
-                                posts.append(post.init(mainImage: mainImage, name: name, previewURL: previewURL))
+                                //posts.append(post.init(mainImage: mainImage, name: name, previewURL: previewURL))
+                                posts.append(post.init(mainImage: mainImage, name: name))
                                 self.spotTableView.reloadData()
                             }
                         }
@@ -179,7 +181,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         
         vc.image = posts[indexPath!].mainImage
         vc.mainSongTitle = posts[indexPath!].name
-        vc.mainPreviewURL = posts[indexPath!].previewURL
+        //vc.mainPreviewURL = posts[indexPath!].previewURL
         
     }
     
