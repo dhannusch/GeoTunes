@@ -36,13 +36,14 @@ class SpotifyViewController: UIViewController {
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(loginAction(sender:)), for: .touchUpInside)
         button.setTitle("LOGIN TO SPOTIFY", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
+        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
         
         let titleLabel = UILabel()
         titleLabel.textColor = .white
-        titleLabel.text = "Please login here"
+        titleLabel.text = "Please login to continue with GeoTunes."
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         
