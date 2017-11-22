@@ -4,7 +4,7 @@
         <attribute name="pinColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pinID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pinMessage" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="song" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Spotify" representedClassName="Spotify" syncable="YES" codeGenerationType="class">
         <attribute name="spotifySession" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,8 +15,8 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Spotify" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Pin" positionX="-36" positionY="27" width="128" height="105"/>
+        <element name="Spotify" positionX="-54" positionY="18" width="128" height="60"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

@@ -43,6 +43,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestWhenInUseAuthorization()
         locManager.startUpdatingLocation()
+        
+        print(person.value(forKeyPath: "name") as? String)
         // Do any additional setup after loading the view.
     }
     

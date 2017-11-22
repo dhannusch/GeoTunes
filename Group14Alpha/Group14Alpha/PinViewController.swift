@@ -16,11 +16,12 @@ var player = AVAudioPlayer()
 struct post {
     let mainImage : UIImage!
     let name : String!
+    let href : String!
     //let previewURL : String!
 }
 
 class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    
+
     
     @IBOutlet weak var spotSearchBar: UISearchBar!
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -52,13 +53,21 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     var colorData: [String] = [String]()
     @IBOutlet weak var pinMessage: UITextView!
     
+    var newPin = NSManagedObject()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        self.newPin = NSEntityDescription.insertNewObject(forEntityName: "Pin", into: context)
+
+        
         pinMessage.delegate = self
         pinColorPicker.delegate = self
         pinColorPicker.dataSource = self
         self.colorData = ["Red","Green","Blue","Pink","Yellow","Orange","Purple","Black","White"]
-        
+        pinMessage.delegate = self
         callAlamo(url: searchURL)
 
         // Do any additional setup after loading the view.
@@ -81,6 +90,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
                         let item = items[i]
                         
                         let name = item["name"] as! String
+                        let href = item["href"] as! String
                         // 30 second preview of song
                         //let previewURL = item["preview_url"] as! String
                         if let album = item["album"] as? JSONStandard{
@@ -92,7 +102,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
                                 let mainImage = UIImage(data: mainImageData as! Data)
                                 
                                 //posts.append(post.init(mainImage: mainImage, name: name, previewURL: previewURL))
-                                posts.append(post.init(mainImage: mainImage, name: name))
+                                posts.append(post.init(mainImage: mainImage, name: name, href: href))
                                 self.spotTableView.reloadData()
                             }
                         }
@@ -124,6 +134,12 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         return cell!
     }
     
+    var songSelectionURL = String()
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        songSelectionURL = posts[indexPath.row].href
+    }
+    
     
 
     override func didReceiveMemoryWarning() {
@@ -144,6 +160,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         return str
     }
     
+    var pinColor = String()
     
     // Catpure the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -151,9 +168,17 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         // The parameter named row and component represents what was selected.
         print("Row: \(row)")
         print("Value: \(self.colorData[row])")
+        pinColor = self.colorData[row]
+    }
+    var message = ""
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.message = pinMessage.text
     }
     
     @IBAction func pinItButton(_ sender: Any) {
+        self.newPin.setValue(self.songSelectionURL, forKey: "song")
+        self.newPin.setValue(self.message, forKey: "pinMessage")
+        self.newPin.setValue(self.pinColor, forKey: "pinColor")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
         self.present(vc, animated: true, completion: nil)
@@ -170,10 +195,13 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         self.view.endEditing(true)
     }
     
+   
+    
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = self.spotTableView.indexPathForSelectedRow?.row
         
@@ -184,6 +212,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         //vc.mainPreviewURL = posts[indexPath!].previewURL
         
     }
+    */
     
 
 }
