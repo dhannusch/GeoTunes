@@ -139,10 +139,10 @@
 				8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */,
 				8F28A6A71FA021B600A6DE1F /* ViewController.swift */,
 				8F4EF2091FA80B19006C2B47 /* MapViewController.swift */,
+				8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */,
 				8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */,
 				8F0717141FC4C49900324751 /* LoginManager.swift */,
 				8F0717161FC4C51A00324751 /* MediaPlayer.swift */,
-				8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */,
 				8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */,
 				8F28A6A91FA021B600A6DE1F /* Main.storyboard */,
 				8F28A6AC1FA021B600A6DE1F /* Assets.xcassets */,
@@ -474,8 +474,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J93PRX6T2S;
+				DEVELOPMENT_TEAM = DEVF4M6WDA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -497,8 +498,9 @@
 					"\"SpotifyKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.Group14Alpha1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -512,8 +514,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J93PRX6T2S;
+				DEVELOPMENT_TEAM = DEVF4M6WDA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -521,8 +524,9 @@
 				);
 				INFOPLIST_FILE = Group14Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.Group14Alpha1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
