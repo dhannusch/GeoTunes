@@ -497,7 +497,7 @@
 					"\"SpotifyKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.Group14Alpha1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -521,7 +521,7 @@
 				);
 				INFOPLIST_FILE = Group14Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.Group14Alpha1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
