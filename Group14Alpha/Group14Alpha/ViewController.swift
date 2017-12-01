@@ -54,6 +54,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         }
     }
     
+    @IBAction func signUpBtn(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "signUpViewController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     /*
     @objc func handleCustomFBLogin() {
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
