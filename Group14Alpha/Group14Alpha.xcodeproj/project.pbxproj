@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16A864A11FD10171005B5415 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A864A01FD10171005B5415 /* SignUpViewController.swift */; };
 		8F0717101FC4A3DF00324751 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0717111FC4A3DF00324751 /* Alamofire.framework */; };
 		8F0717131FC4B8E200324751 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */; };
 		8F0717151FC4C49A00324751 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0717141FC4C49900324751 /* LoginManager.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0394908F834F419DBE393EC2 /* Pods-Group14Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.release.xcconfig"; sourceTree = "<group>"; };
+		16A864A01FD10171005B5415 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		16DDF6471FA6D27F000EB80D /* Group14Alpha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Group14Alpha.entitlements; sourceTree = "<group>"; };
 		673549A023F5614C0A8157EB /* Pods-Group14Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		7AF569983AEAED8629CE40EB /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,11 +140,12 @@
 				16DDF6471FA6D27F000EB80D /* Group14Alpha.entitlements */,
 				8F28A6A51FA021B600A6DE1F /* AppDelegate.swift */,
 				8F28A6A71FA021B600A6DE1F /* ViewController.swift */,
+				16A864A01FD10171005B5415 /* SignUpViewController.swift */,
 				8F4EF2091FA80B19006C2B47 /* MapViewController.swift */,
+				8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */,
 				8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */,
 				8F0717141FC4C49900324751 /* LoginManager.swift */,
 				8F0717161FC4C51A00324751 /* MediaPlayer.swift */,
-				8F0B0B4A1FC254D000BE8A00 /* PinViewController.swift */,
 				8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */,
 				8F28A6A91FA021B600A6DE1F /* Main.storyboard */,
 				8F28A6AC1FA021B600A6DE1F /* Assets.xcassets */,
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A864A11FD10171005B5415 /* SignUpViewController.swift in Sources */,
 				8F0717131FC4B8E200324751 /* AudioPlayerViewController.swift in Sources */,
 				8F28A6A81FA021B600A6DE1F /* ViewController.swift in Sources */,
 				8F4EF20A1FA80B19006C2B47 /* MapViewController.swift in Sources */,
@@ -474,8 +478,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J93PRX6T2S;
+				DEVELOPMENT_TEAM = DEVF4M6WDA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -499,6 +504,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -512,8 +518,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J93PRX6T2S;
+				DEVELOPMENT_TEAM = DEVF4M6WDA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -523,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
