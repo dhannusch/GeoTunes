@@ -28,6 +28,10 @@
 		8F4EF2191FA8167B006C2B47 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF21E1FA8167B006C2B47 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F4EF21A1FA8167B006C2B47 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF21F1FA8167B006C2B47 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F4EF21B1FA8167B006C2B47 /* Pods_Group14Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF2201FA8167B006C2B47 /* Pods_Group14Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8FB4AF241FD3645C00A57FB0 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4AF271FD3645C00A57FB0 /* GoogleToolboxForMac.framework */; };
+		8FB4AF251FD3645C00A57FB0 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4AF281FD3645C00A57FB0 /* leveldb.framework */; };
+		8FB4AF261FD3645C00A57FB0 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4AF291FD3645C00A57FB0 /* nanopb.framework */; };
+		8FB4AF2B1FD364E100A57FB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB4AF2A1FD364E000A57FB0 /* GoogleService-Info.plist */; };
 		8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */; };
 		8FBFCA7F1FBBDE96006CBBC5 /* SpotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */; };
 		8FBFCA8A1FBBE333006CBBC5 /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFCA891FBBE333006CBBC5 /* BridgeViewController.m */; };
@@ -68,6 +72,10 @@
 		8F4EF21E1FA8167B006C2B47 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4EF21F1FA8167B006C2B47 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4EF2201FA8167B006C2B47 /* Pods_Group14Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Group14Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FB4AF271FD3645C00A57FB0 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FB4AF281FD3645C00A57FB0 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FB4AF291FD3645C00A57FB0 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FB4AF2A1FD364E000A57FB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyViewController.swift; sourceTree = "<group>"; };
 		8FBFCA801FBBE225006CBBC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB4AF241FD3645C00A57FB0 /* GoogleToolboxForMac.framework in Frameworks */,
+				8FB4AF251FD3645C00A57FB0 /* leveldb.framework in Frameworks */,
+				8FB4AF261FD3645C00A57FB0 /* nanopb.framework in Frameworks */,
 				8F0717101FC4A3DF00324751 /* Alamofire.framework in Frameworks */,
 				8FFBFB771FBBE35400CB80C3 /* SpotifyMetadata.framework in Frameworks */,
 				8FFBFB791FBBE35400CB80C3 /* SpotifyAuthentication.framework in Frameworks */,
@@ -134,6 +145,7 @@
 		8F28A6A41FA021B600A6DE1F /* Group14Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				8FB4AF2A1FD364E000A57FB0 /* GoogleService-Info.plist */,
 				8FFBFB751FBBE35300CB80C3 /* SpotifyAudioPlayback.framework */,
 				8FFBFB761FBBE35300CB80C3 /* SpotifyAuthentication.framework */,
 				8FFBFB741FBBE35300CB80C3 /* SpotifyMetadata.framework */,
@@ -161,6 +173,9 @@
 		8F28A6B81FA0242D00A6DE1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FB4AF271FD3645C00A57FB0 /* GoogleToolboxForMac.framework */,
+				8FB4AF281FD3645C00A57FB0 /* leveldb.framework */,
+				8FB4AF291FD3645C00A57FB0 /* nanopb.framework */,
 				8F0717111FC4A3DF00324751 /* Alamofire.framework */,
 				8FBFCA801FBBE225006CBBC5 /* AVFoundation.framework */,
 				8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */,
@@ -253,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F28A6B01FA021B600A6DE1F /* LaunchScreen.storyboard in Resources */,
+				8FB4AF2B1FD364E100A57FB0 /* GoogleService-Info.plist in Resources */,
 				8F28A6AD1FA021B600A6DE1F /* Assets.xcassets in Resources */,
 				8F28A6AB1FA021B600A6DE1F /* Main.storyboard in Resources */,
 			);
