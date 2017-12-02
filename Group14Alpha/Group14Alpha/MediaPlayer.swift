@@ -30,6 +30,15 @@ class MediaPlayer: NSObject {
         }
     }
     
+    
+    func loadTrack(url: String, completion: @escaping (_ track: SPTTrack?, _ error: Error?) -> Void) {
+        SPTTrack.track(withURI: URL(string: url), accessToken: LoginManager.shared.auth.session.accessToken, market: nil) { (error, response) in
+            completion(response as? SPTTrack, error)
+        }
+    }
+    
+    
+    
     func play(track: SPTPartialTrack) {
         player?.playSpotifyURI(track.uri.absoluteString, startingWith: 0, startingWithPosition: 0, callback: { (error) in
             if let error = error {

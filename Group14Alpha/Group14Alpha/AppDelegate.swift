@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import SpotifyKit
 import CoreData
+import Firebase
 
 
 // The SpotifyKit helper object that will allow you to perform the queries
@@ -31,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        FirebaseApp.configure()
         if !LoginManager.shared.isLogged {
             self.window?.rootViewController = SpotifyViewController()
             self.window?.makeKeyAndVisible()

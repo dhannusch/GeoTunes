@@ -10,11 +10,13 @@ import UIKit
 import AVFoundation
 
 
-
 class AudioPlayerViewController: UIViewController {
     var image = UIImage()
+    var imageURL = String()
     var mainSongTitle = String()
     var mainPreviewURL = String()
+    var trackURL = String()
+    var track: SPTTrack?
     
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
@@ -23,10 +25,24 @@ class AudioPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MediaPlayer.shared.delegate = self
+        MediaPlayer.shared.configurePlayer(authSession: LoginManager.shared.auth.session, id: LoginManager.shared.auth.clientID)
+        
         songTitle.text = mainSongTitle
-        background.image = image
-        mainImageView.image = image
-        downloadFileFromURL(url: URL(string: mainPreviewURL)!)
+        print(songTitle.text)
+        let mainImageURL = URL(string: imageURL)
+        print(imageURL)
+        let mainImageData = NSData(contentsOf: mainImageURL!)
+        let mainImage = UIImage(data: mainImageData as! Data)
+        background.image = mainImage
+        mainImageView.image = mainImage
+        //print(mainPreviewURL)
+        print(trackURL)
+        //downloadFileFromURL(url: URL(string: mainPreviewURL)!)
+        self.load(track: trackURL)
+        //self.play(t: self.track!)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -35,23 +51,37 @@ class AudioPlayerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func load(track: String) {
+        guard LoginManager.shared.isLogged else {return}
+        MediaPlayer.shared.loadTrack(url: track) {[weak self] (track, error) in
+            guard let `self` = self else {return}
+            guard let track = track, error == nil else {
+                self.showDefaultError()
+                return
+            }
+            self.track = track
+            self.play(t: track)
+        }
+    }
+    
     func downloadFileFromURL(url: URL){
         
         var downloadTask = URLSessionDownloadTask()
         downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
             customURL, response, error in
             
-            self.play(url: customURL!)
+            //self.play(url: customURL!)
         })
         downloadTask.resume()
     }
     
-    func play(url:URL){
-        
+    //func play(url:URL){
+    func play(t: SPTTrack ){
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player.prepareToPlay()
-            player.play()
+//            player = try AVAudioPlayer(contentsOf: url)
+//            player.prepareToPlay()
+//            player.play()
+            MediaPlayer.shared.play(track: t)
         }
         catch{
             print(error)
@@ -60,12 +90,15 @@ class AudioPlayerViewController: UIViewController {
     }
     
     @IBAction func playOrPause(_ sender: AnyObject) {
-        if player.isPlaying {
-            player.pause()
+        //if player.isPlaying {
+        if MediaPlayer.shared.isPlaying{
+            //player.pause()
+            MediaPlayer.shared.pause()
             playOrPauseBtn.setTitle("Play", for: .normal)
         }
         else{
-            player.play()
+            //player.play()
+            MediaPlayer.shared.resume()
             playOrPauseBtn.setTitle("Pause", for: .normal)
         }
     }
@@ -80,4 +113,42 @@ class AudioPlayerViewController: UIViewController {
     }
     */
 
+}
+
+extension AudioPlayerViewController: MediaPlayerDelegate {
+    
+    func mediaPlayerDidStartPlaying(track: SPTPartialTrack) {
+        
+    }
+    
+    func mediaPlayerDidChange(trackProgress: Double) {
+        //progressSlider.setValue(Float(trackProgress), animated: true)
+    }
+    
+    func mediaPlayerDidPause() {
+        
+    }
+    
+    func mediaPlayerDidResume() {
+        
+    }
+    
+    func mediaPlayerDidFail(error: Error) {
+        showDefaultError()
+        MediaPlayer.shared.pause()
+        //updatePlayButton(playing: false)
+    }
+    
+    func mediaPlayerDidFinishTrack() {
+        //updatePlayButton(playing: false)
+        //progressSlider.setValue(0, animated: false)
+    }
+    
+    fileprivate func showDefaultError() {
+        let alert = UIAlertController(title: "Oops", message: "Something went wrong. Please try again.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
