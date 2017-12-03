@@ -96,6 +96,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestWhenInUseAuthorization()
         locManager.startUpdatingLocation()
+        locManager.distanceFilter = 10.0
     }
     
     var color = ""
@@ -201,6 +202,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
         
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
+        
         self.myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
@@ -227,7 +231,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation { return nil }
-        
+    
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "Pin") as? MKMarkerAnnotationView
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
