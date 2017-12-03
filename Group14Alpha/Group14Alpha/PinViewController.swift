@@ -70,7 +70,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         pinColorPicker.delegate = self
         pinColorPicker.dataSource = self
         self.colorData = ["Red","Green","Blue","Yellow","Orange","Purple","Black","White"]
-        self.durationData = ["30 seconds", "1 hour", "1 day", "1 week", "forever"]
+        self.durationData = ["30 Seconds", "1 Hour", "1 Day", "1 Week", "Forever"]
         pinMessage.delegate = self
         callAlamo(url: searchURL)
 

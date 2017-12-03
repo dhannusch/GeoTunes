@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1665F67A1FD36C6D00C2E55D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1665F6791FD36C6C00C2E55D /* GoogleService-Info.plist */; };
 		16A864A11FD10171005B5415 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A864A01FD10171005B5415 /* SignUpViewController.swift */; };
 		8F0717101FC4A3DF00324751 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0717111FC4A3DF00324751 /* Alamofire.framework */; };
 		8F0717131FC4B8E200324751 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0717121FC4B8E200324751 /* AudioPlayerViewController.swift */; };
@@ -31,7 +32,6 @@
 		8FB4AF241FD3645C00A57FB0 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4AF271FD3645C00A57FB0 /* GoogleToolboxForMac.framework */; };
 		8FB4AF251FD3645C00A57FB0 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4AF281FD3645C00A57FB0 /* leveldb.framework */; };
 		8FB4AF261FD3645C00A57FB0 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4AF291FD3645C00A57FB0 /* nanopb.framework */; };
-		8FB4AF2B1FD364E100A57FB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB4AF2A1FD364E000A57FB0 /* GoogleService-Info.plist */; };
 		8FBFCA7C1FBBD992006CBBC5 /* SpotifyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */; };
 		8FBFCA7F1FBBDE96006CBBC5 /* SpotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */; };
 		8FBFCA8A1FBBE333006CBBC5 /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFCA891FBBE333006CBBC5 /* BridgeViewController.m */; };
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		0394908F834F419DBE393EC2 /* Pods-Group14Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.release.xcconfig"; sourceTree = "<group>"; };
+		1665F6791FD36C6C00C2E55D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16A864A01FD10171005B5415 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		16DDF6471FA6D27F000EB80D /* Group14Alpha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Group14Alpha.entitlements; sourceTree = "<group>"; };
 		673549A023F5614C0A8157EB /* Pods-Group14Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group14Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group14Alpha/Pods-Group14Alpha.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		8FB4AF271FD3645C00A57FB0 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB4AF281FD3645C00A57FB0 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB4AF291FD3645C00A57FB0 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FB4AF2A1FD364E000A57FB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FBFCA7D1FBBD992006CBBC5 /* SpotifyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotifyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBFCA7E1FBBDE96006CBBC5 /* SpotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyViewController.swift; sourceTree = "<group>"; };
 		8FBFCA801FBBE225006CBBC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -145,7 +145,7 @@
 		8F28A6A41FA021B600A6DE1F /* Group14Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				8FB4AF2A1FD364E000A57FB0 /* GoogleService-Info.plist */,
+				1665F6791FD36C6C00C2E55D /* GoogleService-Info.plist */,
 				8FFBFB751FBBE35300CB80C3 /* SpotifyAudioPlayback.framework */,
 				8FFBFB761FBBE35300CB80C3 /* SpotifyAuthentication.framework */,
 				8FFBFB741FBBE35300CB80C3 /* SpotifyMetadata.framework */,
@@ -268,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F28A6B01FA021B600A6DE1F /* LaunchScreen.storyboard in Resources */,
-				8FB4AF2B1FD364E100A57FB0 /* GoogleService-Info.plist in Resources */,
+				1665F67A1FD36C6D00C2E55D /* GoogleService-Info.plist in Resources */,
 				8F28A6AD1FA021B600A6DE1F /* Assets.xcassets in Resources */,
 				8F28A6AB1FA021B600A6DE1F /* Main.storyboard in Resources */,
 			);
@@ -496,7 +496,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J93PRX6T2S;
+				DEVELOPMENT_TEAM = DEVF4M6WDA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -518,7 +518,7 @@
 					"\"SpotifyKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
@@ -536,7 +536,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J93PRX6T2S;
+				DEVELOPMENT_TEAM = DEVF4M6WDA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -544,7 +544,7 @@
 				);
 				INFOPLIST_FILE = Group14Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
