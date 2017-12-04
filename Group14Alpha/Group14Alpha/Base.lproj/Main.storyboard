@@ -338,16 +338,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8V-3o-tIS">
-                                <rect key="frame" x="16" y="287" width="346" height="47"/>
+                                <rect key="frame" x="16" y="291" width="346" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="ixc-5N-PHy"/>
+                                    <constraint firstAttribute="height" constant="43" id="ixc-5N-PHy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-k9-tf2">
-                                <rect key="frame" x="16" y="334" width="343" height="68"/>
+                                <rect key="frame" x="16" y="338" width="343" height="64"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -368,10 +368,10 @@
                                 </connections>
                             </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d8b-I9-ZkY">
-                                <rect key="frame" x="0.0" y="112" width="375" height="175"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="179"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="R9u-3W-8Ak"/>
+                                    <constraint firstAttribute="height" constant="179" id="R9u-3W-8Ak"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aPp-Gu-Agu">
@@ -444,7 +444,7 @@
                             <constraint firstItem="d8b-I9-ZkY" firstAttribute="top" secondItem="7Ls-1i-BdN" secondAttribute="bottom" id="4YX-VG-owM"/>
                             <constraint firstItem="cgG-6M-fRg" firstAttribute="top" secondItem="xuv-yx-fP8" secondAttribute="top" id="8hQ-qQ-6Jh"/>
                             <constraint firstItem="JNy-QW-XDL" firstAttribute="baseline" secondItem="yHU-Ry-vuG" secondAttribute="baseline" id="94Z-Q4-O4y"/>
-                            <constraint firstItem="JJo-k9-tf2" firstAttribute="top" secondItem="e8V-3o-tIS" secondAttribute="bottom" id="ATQ-PS-c30"/>
+                            <constraint firstItem="JJo-k9-tf2" firstAttribute="top" secondItem="e8V-3o-tIS" secondAttribute="bottom" constant="4" id="ATQ-PS-c30"/>
                             <constraint firstItem="xuv-yx-fP8" firstAttribute="trailing" secondItem="IEP-Ia-cbb" secondAttribute="trailing" id="BBj-8T-r6R"/>
                             <constraint firstItem="xuv-yx-fP8" firstAttribute="trailing" secondItem="7Ls-1i-BdN" secondAttribute="trailing" id="BH7-Ed-PZ4"/>
                             <constraint firstItem="e8V-3o-tIS" firstAttribute="leading" secondItem="JNy-QW-XDL" secondAttribute="leading" id="BK3-Sf-YjX"/>
