@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -60,6 +61,23 @@ class SignUpViewController: UIViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    @IBAction func signUpAction(_ sender: Any) {
+        Auth.auth().createUser(withEmail: email.text!, password: password.text!, completion: {
+            user, error in
+            print(error)
+            if error != nil{
+                print("email/username already used")
+            }
+            else{
+                print("User Created")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+                self.present(vc, animated: true, completion: nil)
+            }
+            
+        })
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

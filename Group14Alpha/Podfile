@@ -14,4 +14,5 @@ pod 'SpotifyKit', '~> 0.0'
 pod 'Alamofire', '~> 4.5'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Auth'
 end

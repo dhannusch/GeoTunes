@@ -212,6 +212,9 @@
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpAction:" destination="7jd-P8-f5Y" eventType="touchUpInside" id="Ean-oD-OI0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
