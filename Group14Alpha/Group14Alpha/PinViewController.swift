@@ -87,6 +87,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     
     func parseData(JSONData: Data){
         do {
+            self.posts.removeAll()
             var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
             if let tracks = readableJSON["tracks"] as? JSONStandard{
                 if let items = tracks ["items"] as? [JSONStandard] {
