@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -535,8 +534,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3OF-cp-dSt">
                                             <rect key="frame" x="67" y="79" width="240" height="240"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="3OF-cp-dSt" secondAttribute="height" multiplier="1:1" id="Dyz-hD-Jsu"/>
-                                                <constraint firstAttribute="height" constant="240" id="Vgb-bJ-ZzI"/>
+                                                <constraint firstAttribute="height" constant="240" id="bak-AQ-5Ti"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-0l-bwi">
@@ -548,6 +546,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+<<<<<<< HEAD
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp7-2l-2j6">
                                             <rect key="frame" x="16" y="23" width="64" height="30"/>
                                             <color key="backgroundColor" red="0.65954554080000005" green="0.22057041529999999" blue="0.19996902350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -566,12 +565,22 @@
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <segue destination="fMT-u1-0ie" kind="show" id="YHp-Of-2gn"/>
+=======
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-7i-dBt">
+                                            <rect key="frame" x="164" y="535" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="MjO-2j-jQw"/>
+                                            </constraints>
+                                            <state key="normal" title="Pause"/>
+                                            <connections>
+                                                <action selector="playOrPause:" destination="0UE-4s-Xtt" eventType="touchUpInside" id="tg7-4I-6D4"/>
+>>>>>>> 6748f075f940bb3599cf051f7eff4b1c097eb8ff
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrm-gD-ioY">
                                             <rect key="frame" x="67" y="381" width="240" height="146"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="146" id="q0A-dv-1w7"/>
+                                                <constraint firstAttribute="height" constant="146" id="5Uq-vY-0Lf"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -582,6 +591,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
+<<<<<<< HEAD
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-7i-dBt">
                                             <rect key="frame" x="33" y="535" width="309" height="50"/>
                                             <color key="backgroundColor" red="0.65954554080963135" green="0.22057041525840759" blue="0.19996902346611023" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -600,10 +610,31 @@
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="playOrPause:" destination="0UE-4s-Xtt" eventType="touchUpInside" id="tg7-4I-6D4"/>
+=======
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTh-Z4-6Q8">
+                                            <rect key="frame" x="287" y="26" width="80" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="b92-EE-RUs"/>
+                                            </constraints>
+                                            <state key="normal" title="Delete Pin"/>
+                                            <connections>
+                                                <action selector="deletePinButton:" destination="0UE-4s-Xtt" eventType="touchUpInside" id="VN3-zh-LtK"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp7-2l-2j6">
+                                            <rect key="frame" x="8" y="26" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="VaO-Uk-eaw"/>
+                                            </constraints>
+                                            <state key="normal" title="Back"/>
+                                            <connections>
+                                                <segue destination="fMT-u1-0ie" kind="show" id="YHp-Of-2gn"/>
+>>>>>>> 6748f075f940bb3599cf051f7eff4b1c097eb8ff
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+<<<<<<< HEAD
                                         <constraint firstItem="3OF-cp-dSt" firstAttribute="trailing" secondItem="JSl-0l-bwi" secondAttribute="trailing" id="4BY-md-W40"/>
                                         <constraint firstItem="zrm-gD-ioY" firstAttribute="top" secondItem="JSl-0l-bwi" secondAttribute="bottom" constant="8" symbolic="YES" id="5hc-xr-yQZ"/>
                                         <constraint firstItem="zrm-gD-ioY" firstAttribute="top" secondItem="3OF-cp-dSt" secondAttribute="bottom" constant="62" id="6ks-LH-bZK"/>
@@ -618,6 +649,23 @@
                                         <constraint firstItem="JSl-0l-bwi" firstAttribute="leading" secondItem="zrm-gD-ioY" secondAttribute="leading" id="xA8-XX-Ftr"/>
                                         <constraint firstItem="Jp7-2l-2j6" firstAttribute="top" secondItem="flg-v4-Efg" secondAttribute="top" constant="23" id="z9j-sh-7rb"/>
                                         <constraint firstItem="Oma-7i-dBt" firstAttribute="leading" secondItem="flg-v4-Efg" secondAttribute="leading" constant="33" id="zJD-U8-cGl"/>
+=======
+                                        <constraint firstItem="Jp7-2l-2j6" firstAttribute="baseline" secondItem="HTh-Z4-6Q8" secondAttribute="baseline" id="05V-gZ-uqc"/>
+                                        <constraint firstItem="zrm-gD-ioY" firstAttribute="top" secondItem="3OF-cp-dSt" secondAttribute="bottom" constant="62" id="EOd-uo-a39"/>
+                                        <constraint firstItem="zrm-gD-ioY" firstAttribute="trailing" secondItem="JSl-0l-bwi" secondAttribute="trailing" id="J8C-YS-THa"/>
+                                        <constraint firstItem="3OF-cp-dSt" firstAttribute="top" secondItem="HTh-Z4-6Q8" secondAttribute="bottom" constant="23" id="NsQ-0W-8GG"/>
+                                        <constraint firstItem="Jp7-2l-2j6" firstAttribute="top" secondItem="flg-v4-Efg" secondAttribute="top" constant="26" id="TJz-ht-Ocq"/>
+                                        <constraint firstItem="3OF-cp-dSt" firstAttribute="leading" secondItem="flg-v4-Efg" secondAttribute="leading" constant="67" id="UaH-pL-k8t"/>
+                                        <constraint firstItem="HTh-Z4-6Q8" firstAttribute="trailing" secondItem="flg-v4-Efg" secondAttribute="trailingMargin" id="dWY-vf-ND0"/>
+                                        <constraint firstItem="Oma-7i-dBt" firstAttribute="top" secondItem="zrm-gD-ioY" secondAttribute="bottom" constant="8" symbolic="YES" id="eAW-9e-Kzs"/>
+                                        <constraint firstItem="zrm-gD-ioY" firstAttribute="leading" secondItem="JSl-0l-bwi" secondAttribute="leading" id="gQ2-XS-f9H"/>
+                                        <constraint firstItem="Jp7-2l-2j6" firstAttribute="leading" secondItem="flg-v4-Efg" secondAttribute="leadingMargin" id="gez-Pb-nc3"/>
+                                        <constraint firstItem="zrm-gD-ioY" firstAttribute="top" secondItem="JSl-0l-bwi" secondAttribute="bottom" constant="8" symbolic="YES" id="iFT-Er-7fJ"/>
+                                        <constraint firstItem="3OF-cp-dSt" firstAttribute="trailing" secondItem="JSl-0l-bwi" secondAttribute="trailing" id="iJc-uP-VMC"/>
+                                        <constraint firstItem="3OF-cp-dSt" firstAttribute="leading" secondItem="JSl-0l-bwi" secondAttribute="leading" id="lzx-7s-DIw"/>
+                                        <constraint firstItem="zrm-gD-ioY" firstAttribute="centerX" secondItem="Oma-7i-dBt" secondAttribute="centerX" id="q49-Wr-T2u"/>
+                                        <constraint firstItem="3OF-cp-dSt" firstAttribute="centerX" secondItem="flg-v4-Efg" secondAttribute="centerX" id="sgH-bR-xp2"/>
+>>>>>>> 6748f075f940bb3599cf051f7eff4b1c097eb8ff
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
@@ -638,6 +686,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="nC2-7A-Yon" id="bQn-xr-nbx"/>
+                        <outlet property="deletePinBtnOutlet" destination="HTh-Z4-6Q8" id="gEk-fH-zRH"/>
                         <outlet property="mainImageView" destination="3OF-cp-dSt" id="j4i-Fi-hrI"/>
                         <outlet property="messageView" destination="zrm-gD-ioY" id="KOk-Pp-hgH"/>
                         <outlet property="playOrPauseBtn" destination="Oma-7i-dBt" id="iVV-DZ-UsV"/>
