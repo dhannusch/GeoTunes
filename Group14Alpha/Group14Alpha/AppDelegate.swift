@@ -36,7 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !LoginManager.shared.isLogged {
             self.window?.rootViewController = SpotifyViewController()
             self.window?.makeKeyAndVisible()
-        } else {
+        }
+            /*
+        else if Auth.auth().currentUser != nil {
+            self.window?.rootViewController = MapViewController()
+            self.window?.makeKeyAndVisible()
+        }
+             */
+        else {
             LoginManager.shared.preparePlayer()
         }
         

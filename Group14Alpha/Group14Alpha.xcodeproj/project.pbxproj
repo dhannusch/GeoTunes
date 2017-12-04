@@ -21,6 +21,7 @@
 		8F28A6AD1FA021B600A6DE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F28A6AC1FA021B600A6DE1F /* Assets.xcassets */; };
 		8F28A6B01FA021B600A6DE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F28A6AE1FA021B600A6DE1F /* LaunchScreen.storyboard */; };
 		8F28A6BA1FA0242D00A6DE1F /* FacebookSDKs-iOS-4.27.1 in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F28A6B91FA0242D00A6DE1F /* FacebookSDKs-iOS-4.27.1 */; };
+		8F35A44F1FD5F22300FE0309 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F35A4501FD5F22300FE0309 /* GTMSessionFetcher.framework */; };
 		8F4EF20A1FA80B19006C2B47 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4EF2091FA80B19006C2B47 /* MapViewController.swift */; };
 		8F4EF20C1FA813AD006C2B47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF20B1FA813AD006C2B47 /* MapKit.framework */; };
 		8F4EF20E1FA813EB006C2B47 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4EF20D1FA813E3006C2B47 /* CoreLocation.framework */; };
@@ -61,6 +62,7 @@
 		8F28A6AF1FA021B600A6DE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F28A6B11FA021B600A6DE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F28A6B91FA0242D00A6DE1F /* FacebookSDKs-iOS-4.27.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "FacebookSDKs-iOS-4.27.1"; path = "../../../../../../../Documents/FacebookSDKs-iOS-4.27.1"; sourceTree = "<group>"; };
+		8F35A4501FD5F22300FE0309 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4EF2091FA80B19006C2B47 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8F4EF20B1FA813AD006C2B47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8F4EF20D1FA813E3006C2B47 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F35A44F1FD5F22300FE0309 /* GTMSessionFetcher.framework in Frameworks */,
 				8FB4AF241FD3645C00A57FB0 /* GoogleToolboxForMac.framework in Frameworks */,
 				8FB4AF251FD3645C00A57FB0 /* leveldb.framework in Frameworks */,
 				8FB4AF261FD3645C00A57FB0 /* nanopb.framework in Frameworks */,
@@ -173,6 +176,7 @@
 		8F28A6B81FA0242D00A6DE1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F35A4501FD5F22300FE0309 /* GTMSessionFetcher.framework */,
 				8FB4AF271FD3645C00A57FB0 /* GoogleToolboxForMac.framework */,
 				8FB4AF281FD3645C00A57FB0 /* leveldb.framework */,
 				8FB4AF291FD3645C00A57FB0 /* nanopb.framework */,
@@ -504,7 +508,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DEVF4M6WDA;
+				DEVELOPMENT_TEAM = J93PRX6T2S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -526,7 +530,7 @@
 					"\"SpotifyKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";
@@ -544,7 +548,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DEVF4M6WDA;
+				DEVELOPMENT_TEAM = J93PRX6T2S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -552,7 +556,7 @@
 				);
 				INFOPLIST_FILE = Group14Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.GeoTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Group14Alpha/Group14Alpha-Bridging-Header.h";

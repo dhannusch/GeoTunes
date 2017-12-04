@@ -12,14 +12,14 @@ import Firebase
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var firstName: UITextField!
-    @IBOutlet weak var lastName: UITextField!
+    //@IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
     
     override func viewDidLoad() {
         firstName.borderStyle = UITextBorderStyle.roundedRect
-        lastName.borderStyle = UITextBorderStyle.roundedRect
+        //lastName.borderStyle = UITextBorderStyle.roundedRect
         email.borderStyle = UITextBorderStyle.roundedRect
         password.borderStyle = UITextBorderStyle.roundedRect
         
@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
         signUpBtn.setTitleColor(UIColor.gray, for: .disabled)
         signUpBtn.isEnabled = false
         firstName.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
-        lastName.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        //lastName.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         email.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         password.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
     }
@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
         }
         guard
             let firstName = firstName.text, !firstName.isEmpty,
-            let lastName = lastName.text, !lastName.isEmpty,
+            //let lastName = lastName.text, !lastName.isEmpty,
             let email = email.text, !email.isEmpty,
             let password = password.text, !password.isEmpty
         else {
@@ -63,17 +63,54 @@ class SignUpViewController: UIViewController {
         return true
     }
     @IBAction func signUpAction(_ sender: Any) {
+        
         Auth.auth().createUser(withEmail: email.text!, password: password.text!, completion: {
             user, error in
             print(error)
             if error != nil{
-                print("email/username already used")
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    
+                    switch errCode {
+                    case .invalidEmail:
+                        let alert = UIAlertController(title: "Oops", message: "Invalid Email", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                        print("invalid email")
+                    case .emailAlreadyInUse:
+                        let alert = UIAlertController(title: "Oops", message: "Email Already In Use", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                        print("in use")
+                    case .weakPassword:
+                        let alert = UIAlertController(title: "Weak Password", message: "Password should be at least six characters", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                    default:
+                        print("Create User Error: \(error!)")
+                    }
+                }
             }
             else{
                 print("User Created")
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
-                self.present(vc, animated: true, completion: nil)
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = self.firstName.text!
+                changeRequest?.commitChanges { (error) in
+                    // ...
+                }
+                
+                let alert = UIAlertController(title: "SUCCESS", message: "Account created for \(String(describing: self.firstName.text!))", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Continue", style: .default) {action in
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+                    self.present(vc, animated: true, completion: nil)
+                }
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+                
+                
             }
             
         })
