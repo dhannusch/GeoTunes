@@ -64,6 +64,7 @@ class GeoTuneAnnotation : NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
+    var message: String?
     var imageURL: String?
     var songURI: String?
     
@@ -71,6 +72,7 @@ class GeoTuneAnnotation : NSObject, MKAnnotation {
         self.coordinate = CLLocationCoordinate2D()
         self.title = nil
         self.subtitle = nil
+        self.message = nil
         self.imageURL = nil
         self.songURI = nil
     }
@@ -124,9 +126,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             //let Seconds: Set<Calendar.Component> = [.second]
             let date = Date()
+            print("time:", time)
+            print("newTime:", newTime)
+            print("Current Date:", date)
             let diff = date.timeIntervalSince(newTime)
             //let difference = NSCalendar.current.dateComponents(Seconds, from: newTime, to: date)
             //if let second = difference.second, second > dur!
+            print("Diff:", diff)
+            print("Dur:", dur)
             if diff>dur! && dur! != -1.0
             {
                 // delete pin
@@ -148,7 +155,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let newLocation = CLLocationCoordinate2DMake(latitude!,longitude!)
                 newPin.coordinate = newLocation
                 newPin.title = song
-                newPin.subtitle = message
+                newPin.subtitle = Auth.auth().currentUser?.displayName
+                newPin.message = message
                 newPin.imageURL = albumCover
                 newPin.songURI = songURI
                 let annotationView = self.mapView(self.mapView, viewFor: newPin)
@@ -315,6 +323,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             vc.mainSongTitle = self.thePin.title!
             vc.imageURL = self.thePin.imageURL!
             vc.trackURL = self.thePin.songURI!
+            vc.message = self.thePin.message!
         }
     }
  

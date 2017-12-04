@@ -203,7 +203,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         else{
             print("Row: \(row)")
             print("Value: \(self.durationData[row])")
-            duration = self.durationData[row]
+            self.duration = self.durationData[row]
         }
     }
     var message = ""
@@ -242,16 +242,16 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         let time = Date().timeIntervalSince1970 as Double!
         var dur = 0.0
         // dur is in seconds
-        if self.duration == "forever"{
+        if self.duration == "Forever"{
             dur = -1
         }
-        else if self.duration == "1 hour"{
+        else if self.duration == "1 Hour"{
             dur = 3600.0
         }
-        else if self.duration == "1 day"{
+        else if self.duration == "1 Day"{
             dur = 86400.0
         }
-        else if self.duration == "1 week"{
+        else if self.duration == "1 Week"{
             dur = 604800.0
         }
         else{

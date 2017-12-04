@@ -16,12 +16,16 @@ class AudioPlayerViewController: UIViewController {
     var mainSongTitle = String()
     var mainPreviewURL = String()
     var trackURL = String()
+    var message = String()
     var track: SPTTrack?
     
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var playOrPauseBtn: UIButton!
+    @IBOutlet weak var messageView: UILabel!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,7 @@ class AudioPlayerViewController: UIViewController {
         let mainImage = UIImage(data: mainImageData as! Data)
         background.image = mainImage
         mainImageView.image = mainImage
+        messageView.text = message
         //print(mainPreviewURL)
         print(trackURL)
         //downloadFileFromURL(url: URL(string: mainPreviewURL)!)
