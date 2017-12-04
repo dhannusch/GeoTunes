@@ -147,6 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="password" destination="WSJ-QY-kei" id="nbE-pm-J2D"/>
+                        <outlet property="primaryLoginButton" destination="u1h-sD-Buw" id="RAv-fM-O5Z"/>
                         <outlet property="username" destination="Zoe-gi-6Yn" id="8gL-6O-aJC"/>
                     </connections>
                 </viewController>
@@ -240,6 +241,7 @@
                         <outlet property="firstName" destination="ipW-Tr-Jb5" id="AIU-Fe-zF6"/>
                         <outlet property="lastName" destination="oZE-FA-4qw" id="IZD-gQ-KAv"/>
                         <outlet property="password" destination="kKN-Yw-58E" id="ajM-Ww-0Wz"/>
+                        <outlet property="signUpBtn" destination="EY8-qT-E8N" id="ug9-l9-VGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STk-Zs-xWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -482,6 +484,7 @@
                     <connections>
                         <outlet property="durationPicker" destination="VBD-Le-boE" id="c26-nl-Cxo"/>
                         <outlet property="pinColorPicker" destination="icF-P9-uxr" id="k7n-fA-vrk"/>
+                        <outlet property="pinItButton" destination="IEP-Ia-cbb" id="POC-3t-JEf"/>
                         <outlet property="pinMessage" destination="JJo-k9-tf2" id="XZT-Ez-AVP"/>
                         <outlet property="spotSearchBar" destination="7Ls-1i-BdN" id="SxF-8v-6e2"/>
                         <outlet property="spotTableView" destination="d8b-I9-ZkY" id="8wo-u1-s9Q"/>

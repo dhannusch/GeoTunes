@@ -22,11 +22,9 @@ struct post {
     let imageURL : String!
     let name : String!
     let uri : String!
-    //let previewURL : String!
 }
 
 class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
     
     @IBOutlet weak var spotSearchBar: UISearchBar!
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -44,7 +42,6 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
 
     
     var auth = SPTAuth.defaultInstance()!
-    //var session:SPTSession!
     var player: SPTAudioStreamingController?
     var loginUrl: URL?
     var userDefaults: UserDefaults!
@@ -62,7 +59,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     
     @IBOutlet weak var pinMessage: UITextView!
     
-    //var newPin = NSManagedObject()
+    @IBOutlet weak var pinItButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +70,9 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         self.durationData = ["30 Seconds", "1 Hour", "1 Day", "1 Week", "Forever"]
         pinMessage.delegate = self
         callAlamo(url: searchURL)
-
-        // Do any additional setup after loading the view.
+        
+        pinItButton.setTitleColor(UIColor.gray, for: .disabled)
+        pinItButton.isEnabled = false
     }
     
     func callAlamo(url: String){
@@ -152,17 +150,16 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     var imageURL = String()
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pinItButton.isEnabled = true
+        
         self.songSelectionURL = posts[indexPath.row].name
         self.imageChosen = posts[indexPath.row].mainImage
         self.imageURL = posts[indexPath.row].imageURL
         self.songURI = posts[indexPath.row].uri
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -215,16 +212,6 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
     
     @IBAction func pinItButton(_ sender: Any) {
         addPin()
-        /*
-        self.newPin.setValue(self.songSelectionURL, forKey: "song")
-        self.newPin.setValue(self.message, forKey: "pinMessage")
-        self.newPin.setValue(self.pinColor, forKey: "pinColor")
-         */
-        /*
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
-        self.present(vc, animated: true, completion: nil)
-         */
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -280,46 +267,4 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         pinIDref.setValue(pin)
         
     }
-    
-   
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*
-        let indexPath = self.spotTableView.indexPathForSelectedRow?.row
-        
-        let vc = segue.destination as! AudioPlayerViewController
-        
-        vc.image = posts[indexPath!].mainImage
-        vc.mainSongTitle = posts[indexPath!].name
-        //vc.mainPreviewURL = posts[indexPath!].previewURL
- */
-        let indexPath = self.spotTableView.indexPathForSelectedRow?.row
-        
-        let vc = segue.destination as! MapViewController
-        
-        //vc.savePin(posts[indexPath!].name, pinMessage: self.pinMessage.text, pinColor: self.pinColor)
-        vc.pinMessage = self.pinMessage.text
-        vc.pinColor = self.pinColor
-        //vc.song = self.songSelectionURL
-        vc.song = posts[indexPath!].name
-        /*
-        vc.annotation.coordinate = vc.self.myLocation
-        vc.annotation.title = vc.self.song
-        vc.annotation.subtitle = vc.self.pinMessage
-        vc.mapView.addAnnotation(vc.annotation)
-        print("Adding Pin!")
- */
-        //print(vc.annotation)
-        //print(vc.mapView)
-        
-    }
- 
-    */
-    
-
 }

@@ -14,6 +14,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var primaryLoginButton: UIButton!
     
     let defaults = UserDefaults.standard
 
@@ -26,19 +27,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         
         super.viewDidLoad()
         
-        // Custom FB Login Button
-        /*
-        let customFBButton = UIButton(type: .system)
-        customFBButton.backgroundColor = .blue
-        customFBButton.frame = CGRect(x: 56, y: 480, width: 263 , height: 50)
-        customFBButton.setTitle("Log In With Facebook", for: .normal)
-        customFBButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        customFBButton.setTitleColor(.white, for: .normal)
-        customFBButton.layer.cornerRadius = 6
-        view.addSubview(customFBButton)
-        
-        customFBButton.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
-        */
+        primaryLoginButton.setTitleColor(UIColor.gray, for: .disabled)
+        primaryLoginButton.isEnabled = false
+        username.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        password.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
     }
     
     @IBAction func customFBButton(_ sender: UIButton) {
@@ -60,17 +52,22 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         self.present(vc, animated: true, completion: nil)
     }
     
-    /*
-    @objc func handleCustomFBLogin() {
-        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
-            if err != nil {
-                print("Custom FB Login failed:", err)
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.characters.count == 1 {
+            if textField.text?.characters.first == " " {
+                textField.text = ""
                 return
             }
-            self.showEmailAddress()
         }
+        guard
+            let username = username.text, !username.isEmpty,
+            let password = password.text, !password.isEmpty
+        else {
+            primaryLoginButton.isEnabled = false
+            return
+        }
+        primaryLoginButton.isEnabled = true
     }
-    */
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 'First Responder' is the same as 'input focus'.
@@ -85,10 +82,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func primaryLoginButton(_ sender: Any) {
+    @IBAction func primaryLoginButton(_ sender: UIButton) {
         defaults.set("\(username)", forKey: "username")
         defaults.set("\(username)", forKey: "password")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
