@@ -125,14 +125,47 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     }
 
     func showEmailAddress() {
+        var name = ""
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
             if err != nil {
                 
                 print("Failed to start graph request:", err!)
                 return
             }
-            print(result!)
+            guard
+                let result = result as? NSDictionary,
+                let FBname = result["name"] as? String
+                else {
+                    return
+                }
+            
+            print(FBname)
+            name = FBname
         }
+        
+        
+        
+        
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else{return}
+        let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        Auth.auth().signIn(with: credentials, completion: {
+            (user,error) in
+            if error != nil {
+                print("Something went wrong with facebook:",error ?? "")
+                return
+            }
+            print("Successfully Logged in with FB User:", user ?? "")
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = name
+            changeRequest?.commitChanges { (error) in
+                // ...
+            }
+            
+            
+        })
+        
+        
     }
 }
 

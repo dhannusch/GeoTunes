@@ -70,6 +70,7 @@ class GeoTuneAnnotation : NSObject, MKAnnotation {
     var songURI: String?
     var pinID: String?
     var email: String?
+    var displayName: String?
     
     override init() {
         self.coordinate = CLLocationCoordinate2D()
@@ -80,6 +81,7 @@ class GeoTuneAnnotation : NSObject, MKAnnotation {
         self.songURI = nil
         self.pinID = nil
         self.email = nil
+        self.displayName = nil
     }
 }
 
@@ -129,6 +131,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let newTime = Date(timeIntervalSince1970: time!)
             let dur = snapshotValue?["duration"] as? Double
             let email = snapshotValue?["email"] as? String
+            let displayName = snapshotValue?["displayName"] as? String
             //let Seconds: Set<Calendar.Component> = [.second]
             let date = Date()
             print("time:", time)
@@ -160,7 +163,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let newLocation = CLLocationCoordinate2DMake(latitude!,longitude!)
                 newPin.coordinate = newLocation
                 newPin.title = song
-                newPin.subtitle = Auth.auth().currentUser?.displayName
+                newPin.subtitle = displayName
                 newPin.message = message
                 newPin.imageURL = albumCover
                 newPin.songURI = songURI
@@ -294,10 +297,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let action = UIAlertAction(title: "Yes", style: .destructive) {action in
             do{
                 try Auth.auth().signOut()
+                MediaPlayer.shared.pause()
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "loginView")
                 self.present(vc, animated: true, completion: nil)
-                               
+                
             }
             catch let error as NSError{
                 print(error)
