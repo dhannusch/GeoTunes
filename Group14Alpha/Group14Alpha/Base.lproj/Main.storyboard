@@ -296,10 +296,10 @@
                                 <color key="barTintColor" red="0.67133820056915283" green="0.24788177013397217" blue="0.23134604096412659" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI6-cE-ULP">
-                                <rect key="frame" x="209" y="35" width="136" height="30"/>
+                                <rect key="frame" x="253" y="20" width="106" height="30"/>
                                 <color key="backgroundColor" red="0.65954554080000005" green="0.22057041529999999" blue="0.19996902350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="Q2n-W4-c5S"/>
+                                    <constraint firstAttribute="width" constant="106" id="Q2n-W4-c5S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign Out">
@@ -322,13 +322,13 @@
                             <constraint firstItem="IT5-Tn-y7c" firstAttribute="centerX" secondItem="7Zk-PF-4Au" secondAttribute="centerX" id="NjW-iP-Ycl"/>
                             <constraint firstItem="IT5-Tn-y7c" firstAttribute="bottom" secondItem="CMr-n4-CpV" secondAttribute="bottom" id="Ph0-LI-6xt"/>
                             <constraint firstItem="IT5-Tn-y7c" firstAttribute="leading" secondItem="u2F-8w-6rQ" secondAttribute="leading" id="SPX-Ru-Bij"/>
-                            <constraint firstItem="WI6-cE-ULP" firstAttribute="top" secondItem="5O6-an-at9" secondAttribute="top" constant="15" id="amo-ea-Oru"/>
+                            <constraint firstItem="WI6-cE-ULP" firstAttribute="top" secondItem="5O6-an-at9" secondAttribute="top" id="amo-ea-Oru"/>
                             <constraint firstItem="IT5-Tn-y7c" firstAttribute="trailing" secondItem="CMr-n4-CpV" secondAttribute="trailing" id="dSb-bL-WJJ"/>
                             <constraint firstItem="5O6-an-at9" firstAttribute="bottom" secondItem="7Zk-PF-4Au" secondAttribute="bottom" constant="20" id="eUE-li-Tcb"/>
-                            <constraint firstItem="5O6-an-at9" firstAttribute="trailing" secondItem="WI6-cE-ULP" secondAttribute="trailing" constant="30" id="fsb-ZV-hNi"/>
+                            <constraint firstItem="5O6-an-at9" firstAttribute="trailing" secondItem="WI6-cE-ULP" secondAttribute="trailing" constant="16" id="fsb-ZV-hNi"/>
                             <constraint firstItem="7Zk-PF-4Au" firstAttribute="leading" secondItem="5O6-an-at9" secondAttribute="leading" constant="16" id="h27-gN-Gim"/>
                             <constraint firstItem="7Zk-PF-4Au" firstAttribute="top" secondItem="5O6-an-at9" secondAttribute="top" id="k4R-Xh-yoM"/>
-                            <constraint firstItem="WI6-cE-ULP" firstAttribute="leading" secondItem="5O6-an-at9" secondAttribute="leading" constant="209" id="r4q-dG-a3t"/>
+                            <constraint firstItem="WI6-cE-ULP" firstAttribute="leading" secondItem="5O6-an-at9" secondAttribute="leading" constant="253" id="r4q-dG-a3t"/>
                             <constraint firstItem="IT5-Tn-y7c" firstAttribute="centerY" secondItem="7Zk-PF-4Au" secondAttribute="centerY" id="ytv-5l-XyH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5O6-an-at9"/>
@@ -721,6 +721,7 @@
         <image name="launch" width="2880" height="2880"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="m8r-qQ-Bin"/>
         <segue reference="YHp-Of-2gn"/>
     </inferredMetricsTieBreakers>
 </document>
