@@ -30,7 +30,7 @@ class AudioPlayerViewController: UIViewController {
     
     @IBOutlet weak var deletePinBtnOutlet: UIButton!
     @IBAction func deletePinButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Are you sure you want to delete this pin?", message: "Press OK to delete", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure you want to delete this pin?", message: "Press OK to delete.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .destructive){action in
             let databaseRef  = Database.database().reference()
             MediaPlayer.shared.pause()

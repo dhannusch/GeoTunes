@@ -101,7 +101,7 @@ class SignUpViewController: UIViewController {
                     // ...
                 }
                 
-                let alert = UIAlertController(title: "SUCCESS", message: "Account created for \(String(describing: self.firstName.text!))", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Success", message: "Account created for \(String(describing: self.firstName.text!)).", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Continue", style: .default) {action in
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
