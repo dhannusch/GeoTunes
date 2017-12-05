@@ -8,11 +8,9 @@
 
 import UIKit
 import AVFoundation
-import Firebase
 
 
 class AudioPlayerViewController: UIViewController {
-    var pinID = String()
     var image = UIImage()
     var imageURL = String()
     var mainSongTitle = String()
@@ -20,7 +18,6 @@ class AudioPlayerViewController: UIViewController {
     var trackURL = String()
     var message = String()
     var track: SPTTrack?
-    var userEmail = String()
     
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
@@ -28,25 +25,7 @@ class AudioPlayerViewController: UIViewController {
     @IBOutlet weak var playOrPauseBtn: UIButton!
     @IBOutlet weak var messageView: UILabel!
     
-    @IBOutlet weak var deletePinBtnOutlet: UIButton!
-    @IBAction func deletePinButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Are you sure you want to delete this pin?", message: "Press OK to delete", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .destructive){action in
-            let databaseRef  = Database.database().reference()
-            MediaPlayer.shared.pause()
-            print("delete pin")
-            databaseRef.child("Pins").child(self.pinID).removeValue()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController")
-            self.present(vc, animated: true, completion: nil)
-        }
-        let action2 = UIAlertAction(title:"Cancel", style: .cancel)
-        alert.addAction(action)
-        alert.addAction(action2)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,19 +34,21 @@ class AudioPlayerViewController: UIViewController {
         MediaPlayer.shared.configurePlayer(authSession: LoginManager.shared.auth.session, id: LoginManager.shared.auth.clientID)
         
         songTitle.text = mainSongTitle
+        print(songTitle.text)
         let mainImageURL = URL(string: imageURL)
+        print(imageURL)
         let mainImageData = NSData(contentsOf: mainImageURL!)
         let mainImage = UIImage(data: mainImageData as! Data)
         background.image = mainImage
         mainImageView.image = mainImage
         messageView.text = message
-        if userEmail == Auth.auth().currentUser?.email!{
-            deletePinBtnOutlet.isHidden = false
-        }
-        else{
-            deletePinBtnOutlet.isHidden = true
-        }
+        //print(mainPreviewURL)
+        print(trackURL)
+        //downloadFileFromURL(url: URL(string: mainPreviewURL)!)
         self.load(track: trackURL)
+        //self.play(t: self.track!)
+        
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

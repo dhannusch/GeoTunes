@@ -48,7 +48,6 @@ extension Date {
 
 struct PinStruct{
     let pinID : String!
-    let email: String!
     let longitude: Double!
     let latitude: Double!
     let song : String!
@@ -68,8 +67,6 @@ class GeoTuneAnnotation : NSObject, MKAnnotation {
     var message: String?
     var imageURL: String?
     var songURI: String?
-    var pinID: String?
-    var email: String?
     
     override init() {
         self.coordinate = CLLocationCoordinate2D()
@@ -78,8 +75,6 @@ class GeoTuneAnnotation : NSObject, MKAnnotation {
         self.message = nil
         self.imageURL = nil
         self.songURI = nil
-        self.pinID = nil
-        self.email = nil
     }
 }
 
@@ -128,7 +123,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let time = snapshotValue?["time"] as? Double
             let newTime = Date(timeIntervalSince1970: time!)
             let dur = snapshotValue?["duration"] as? Double
-            let email = snapshotValue?["email"] as? String
+            
             //let Seconds: Set<Calendar.Component> = [.second]
             let date = Date()
             print("time:", time)
@@ -150,8 +145,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 // add pin to PinStruct
                 print("adding to pin struct")
                 
-                self.Pins.append(PinStruct(pinID: pinID, email: email, longitude: longitude, latitude: latitude, song: song, songURI: songURI, albumCover: albumCover, message: message, color: self.color, time: newTime, dur: dur))
-                P.append(PinStruct(pinID: pinID, email: email, longitude: longitude, latitude: latitude, song: song, songURI: songURI,albumCover: albumCover, message: message, color: self.color, time: newTime, dur: dur))
+                self.Pins.append(PinStruct(pinID: pinID, longitude: longitude, latitude: latitude, song: song, songURI: songURI, albumCover: albumCover, message: message, color: self.color, time: newTime, dur: dur))
+                P.append(PinStruct(pinID: pinID, longitude: longitude, latitude: latitude, song: song, songURI: songURI,albumCover: albumCover, message: message, color: self.color, time: newTime, dur: dur))
                 //print("P.count:", P.count)
                 //print("P[index]", P[0])
                 
@@ -164,8 +159,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 newPin.message = message
                 newPin.imageURL = albumCover
                 newPin.songURI = songURI
-                newPin.pinID = pinID
-                newPin.email = email
                 let annotationView = self.mapView(self.mapView, viewFor: newPin)
                 self.mapView.addAnnotation((annotationView?.annotation)!)
             }
@@ -327,12 +320,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         else{
             let vc = segue.destination as! AudioPlayerViewController
-            vc.userEmail = self.thePin.email!
             vc.mainSongTitle = self.thePin.title!
             vc.imageURL = self.thePin.imageURL!
             vc.trackURL = self.thePin.songURI!
             vc.message = self.thePin.message!
-            vc.pinID = self.thePin.pinID!
         }
     }
  
