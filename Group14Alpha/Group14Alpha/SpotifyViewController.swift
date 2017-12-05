@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SpotifyViewController: UIViewController {
 
@@ -64,7 +65,13 @@ class SpotifyViewController: UIViewController {
 
 extension SpotifyViewController: LoginManagerDelegate {
     func loginManagerDidLoginWithSuccess() {
-        UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        if Auth.auth().currentUser != nil{
+            UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapViewController")
+        }
+        else {
+            LoginManager.shared.preparePlayer()
+            UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginView")
+        }
         dismiss(animated: true, completion: nil)
     }
 

@@ -33,20 +33,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mapVC = storyboard.instantiateViewController(withIdentifier: "mapViewController")
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "loginView")
         if !LoginManager.shared.isLogged {
             self.window?.rootViewController = SpotifyViewController()
-            self.window?.makeKeyAndVisible()
         }
-            /*
-        else if Auth.auth().currentUser != nil {
-            self.window?.rootViewController = MapViewController()
-            self.window?.makeKeyAndVisible()
+        else if Auth.auth().currentUser != nil{
+            self.window?.rootViewController = mapVC
         }
-             */
         else {
             LoginManager.shared.preparePlayer()
+            self.window?.rootViewController = loginVC
         }
-        
+        self.window?.makeKeyAndVisible()
         return true
     }
     /*
