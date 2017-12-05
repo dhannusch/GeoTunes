@@ -288,6 +288,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.performSegue(withIdentifier: "detailView", sender: self)
     
     }
+    
+    @IBAction func signOutButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Yes", style: .destructive) {action in
+            do{
+                try Auth.auth().signOut()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "loginView")
+                self.present(vc, animated: true, completion: nil)
+                               
+            }
+            catch let error as NSError{
+                print(error)
+            }
+        }
+        let action2 = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert.addAction(action)
+        alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     /*
     func savePin(_ song: String, pinMessage: String, pinColor: String) {
         
