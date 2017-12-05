@@ -238,6 +238,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         let image = self.imageURL
         let message = self.pinMessage.text
         let color = self.pinColor
+        let email = Auth.auth().currentUser?.email!
         //let time = Date()
         let time = Date().timeIntervalSince1970 as Double!
         var dur = 0.0
@@ -263,7 +264,7 @@ class PinViewController: UIViewController, UITextViewDelegate, UIPickerViewDeleg
         let pinID = databaseRef.child("Pins").childByAutoId().key
         let pinIDref = databaseRef.child("Pins").childByAutoId()
         
-        let pin : [String: AnyObject] = ["pinID": pinID as AnyObject, "longitude": longitude as AnyObject, "latitude": latitude as AnyObject, "song": song as AnyObject, "songURI": songURI as AnyObject, "image": image as AnyObject, "message": message! as AnyObject, "color": color as AnyObject, "time": time as AnyObject, "duration": dur as AnyObject]
+        let pin : [String: AnyObject] = ["pinID": pinID as AnyObject, "email": email as AnyObject, "longitude": longitude as AnyObject, "latitude": latitude as AnyObject, "song": song as AnyObject, "songURI": songURI as AnyObject, "image": image as AnyObject, "message": message! as AnyObject, "color": color as AnyObject, "time": time as AnyObject, "duration": dur as AnyObject]
         
         pinIDref.setValue(pin)
         
