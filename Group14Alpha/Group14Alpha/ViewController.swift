@@ -93,6 +93,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
             
             if error != nil{
                 print("Incorrect Login Credentials")
+                let alert = UIAlertController(title: "Oops", message: "The username or password you entered is incorrect", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
             else{
                 print("Logged In")
@@ -123,6 +127,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     func showEmailAddress() {
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
             if err != nil {
+                
                 print("Failed to start graph request:", err!)
                 return
             }
